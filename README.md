@@ -1,4 +1,4 @@
-# De cero a tested en dos japish 👋 con React, Styled Components y Cypress
+# De cero a tested en dos japish👋 con React, Styled Components y Cypress
 
 > 👨‍🏫 React es una librería para crear interfaces de usuario, la vamos a usar para darle estructura y manejar la lógica de nuestra aplicación.
 > React no nos da una herramienta para manejar los estilos y usar solamente el CSS que soportan los navegadores hace que nuestros estilos sean verbosos, limitados o complicados de mantener en una aplicación grande.
@@ -39,7 +39,7 @@ Vamos a armar el ritmosustanciometro, una app que obtiene el porcentaje de ritmo
 Ahora es tu turno, usa React, Styled Components y Cypress para crear tu propio ritmosustanciometro! (O si te animás, otra cosa)
 
 ## 🤷‍♂️ Y ahora que?
-Ahora sabes un poco de muchas cosas, convertí lo poco en mucho y hace mucho con poco!, we, re filosofo el goncy, *Japish*. Tomá en cuenta algo, acabás de ver muchas cosas nuevas, cada una tiene su complejidad, no esperes saber todo ya ni te desmotives si no sale a la primera, después de todo, nadie nace sabiendo hacer un fernet, o codear en React. Asi que no te olvides, en el [Slack de freeCodeCampBA](https://freecodecampba.org/chat/), estamos para ayudar y contestar dudas siempre.
+Ahora sabes un poco de muchas cosas, convertí lo poco en mucho y hace mucho con poco!, we, re filosofo el goncy, *Japish*👋. Tomá en cuenta algo, acabás de ver muchas cosas nuevas, cada una tiene su complejidad, no esperes saber todo ya ni te desmotives si no sale a la primera, después de todo, nadie nace sabiendo hacer un fernet, o codear en React. Asi que no te olvides, en el [Slack de freeCodeCampBA](https://freecodecampba.org/chat/), estamos para ayudar y contestar dudas siempre.
 
 ## 🔗 Links útiles
 * [Cypress oficial](https://www.cypress.io/)
