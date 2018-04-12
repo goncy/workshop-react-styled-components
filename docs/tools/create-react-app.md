@@ -1,0 +1,1 @@
+Para inicializar nuestra aplicación vamos a usar una herramienta llamada `create-react-app`, la cual vamos a ver un poco mas adelante, esta herramienta nos da un proyecto de React listo y configurado para poder trabajar no solo con React sino que también con ES6 y varias herramientas que nos van a ahorrar mucho tiempo de trabajo
