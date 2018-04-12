@@ -14,7 +14,9 @@ Vamos a armar el ritmosustanciometro, una app que obtiene el porcentaje de ritmo
 * Cualquier editor de texto, recomiendo [Visual Studio Code](https://code.visualstudio.com/).
 * [Node.js](https://nodejs.org/es/) instalado y al menos la version 5.2.0 de `npm` (para poder usar `npx`).
 
-> *Tips*: Para ver que versión de `npm` tenes instalada, en consola corré: `npm -v`. Para instalar la última versión estable de `npm` corré: `npm install -g npm`. Agregá `sudo` al principio si te da problemas de permisos al instalar.
+> *Tip*: Para ver que versión de `npm` tenes instalada, una vez que tengas instalado `node`, en consola corré: `npm -v`.
+> Para instalar la última versión estable de `npm` corré: `npm install -g npm`.
+> Agregá `sudo` al principio si te da problemas de permisos al instalar en `Linux` o `Mac`.
 
 ## Materiales
 * 🔗 [Endpoint obtener ritmo y sustancia](https://wt-3581e5a0e6c19bb4a0552203b2738a9d-0.run.webtask.io/obtener-ritmo-y-sustancia)
@@ -28,18 +30,15 @@ Vamos a armar el ritmosustanciometro, una app que obtiene el porcentaje de ritmo
 * NPM
 * Create React App
 
----
 ## 👣 Pasos
 * 🛠 Crear nuestra aplicación base
 * ➕ Agregar Cypress y Styled Components
 * ⚗️ Armar el ritmosustanciometro
 * ✅ Testear el ritmosustanciometro
 
----
 ## 📝 Ejercicio
 Ahora es tu turno, usa React, Styled Components y Cypress para crear tu propio ritmosustanciometro! (O si te animás, otra cosa)
 
-___
 ## 🤷‍♂️ Y ahora que?
 Ahora sabes un poco de muchas cosas, convertí lo poco en mucho y hace mucho con poco!, we, re filosofo el goncy, *Japish*. Tomá en cuenta algo, acabás de ver muchas cosas nuevas, cada una tiene su complejidad, no esperes saber todo ya ni te desmotives si no sale a la primera, después de todo, nadie nace sabiendo hacer un fernet, o codear en React. Asi que no te olvides, en el [Slack de freeCodeCampBA](https://freecodecampba.org/chat/), estamos para ayudar y contestar dudas siempre.
 
