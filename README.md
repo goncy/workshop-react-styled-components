@@ -12,7 +12,7 @@ Vamos a armar el ritmosustanciometro, una app que obtiene el porcentaje de ritmo
 
 ## Requisitos
 * Cualquier editor de texto, recomiendo [Visual Studio Code](https://code.visualstudio.com/).
-* [Node.js](https://nodejs.org/es/) instalado y al menos la version 5.2.0 de `npm` (para poder usar `npx`).
+* [Node.js](https://nodejs.org/es/) instalado, recomendable la última versión estable.
 
 > *Tip*: Para ver que versión de `npm` tenes instalada, una vez que tengas instalado `node`, en consola corré: `npm -v`.
 > Para instalar la última versión estable de `npm` corré: `npm install -g npm`.
@@ -24,11 +24,10 @@ Vamos a armar el ritmosustanciometro, una app que obtiene el porcentaje de ritmo
 * 📻 [Código proyecto terminado](https://github.com/goncy/charla-fcc-react-styled-components-cypress/tree/master/proyecto)
 
 ## 📚 Qué son las herramientas que vamos a usar?
-* [React](./docs/tools/react.md)
-* [Styled Components](./docs/tools/stylde-components/md)
-* Cypress
-* NPM
 * Create React App
+* [React](./docs/tools/react.md)
+* [Styled Components](./docs/tools/styled-components.md)
+* [Cypress](./docs/tools/cypress.md)
 
 ## 👣 Pasos
 * 🛠 Crear nuestra aplicación base
