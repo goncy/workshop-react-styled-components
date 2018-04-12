@@ -11,7 +11,7 @@ Entonces, al `React` ser `JavaScript`, nos da todas las ventajas que `JavaScript
 Como dijimos antes, `React` esta pensado para ser usado con componentes, por lo tanto, trae una clase integrada en la librería, llamada `Component`, la cual vamos a usar para construir nuestra aplicación.
 
 Este sería un ejemplo de un componente de `React`:
-```javascript
+```jsx
 import React from "react" // Importamos React siempre que necesitemos usar JSX
 
 class ContadorDeSustancias extends React.Component { // Creamos una clase, con un nombre, empezando con mayúscula, que extienda de `React.Component`
@@ -50,7 +50,7 @@ Ves como siempre vemos actualizado el valor actualizado de `kilos`? Esto pasa po
 
 Por último, que son esas `props` de las que hablaba antes?, las props son la manera de pasarle parametros a un componente, dijimos que los componentes podían ser reutilizable, bueno, si no podrían recibir información externa no siempre serían útiles. Vamos a usar nuestro `ContenedorDeSustancias` y modificarlo para que use una prop `sustancia`.
 
-```javascript
+```jsx
 import React from "react" // Importamos `React` siempre que necesitemos usar JSX
 
 class ContadorDeSustancias extends React.Component {
@@ -87,7 +87,7 @@ export default ContenedorDeSustancias
 ```
 
 Entonces ahora podriamos usar nuestro componente de la siguiente manera:
-```javascript
+```jsx
 <ContenedorDeSustancias sustancia="pasto" />
 <ContenedorDeSustancias sustancia="azucar" />
 ```
@@ -97,14 +97,16 @@ Y se vería así:
 
 Esto es todo lo que necesitamos de `React` para crear nuestro `ritmosustanciometro`!
 
+> Gotcha: La diferencia entre `state` y `props` puede no entenderse muy bien al principio, solo recordá, un componente puede cambiar su propio estado directamente (con `setState`), pero no sus `props`.
+
 > Tip: Si solo necesitamos `props` y no necesitamos `state`, podemos escribir un `stateless component` en vez de un `Component` de `React`, para hacerlo, en vez de crear una clase que extiende de `Component`, creamos simplemente una función de la siguiente manera:
-```javascript
+```jsx
 function Holis(props) {
   return <h1>Holis, {props.name}</h1>;
 }
 ```
 > O si queremos hacerlo con una `const`:
-```javascript
+```jsx
 const Holis = (props) => <h1>Holis, {props.name}</h1>;
 ```
 

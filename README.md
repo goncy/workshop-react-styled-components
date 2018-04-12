@@ -1,6 +1,9 @@
 # De cero a tested en dos japish 👋 con React, Styled Components y Cypress
 
-> 👨‍🏫 React es una librería para crear interfaces de usuario, la vamos a usar para darle estructura y manejar la lógica de nuestra aplicación. React no nos da una herramienta para manejar los estilos y usar solamente el CSS que soportan los navegadores hace que nuestros estilos sean verbosos, limitados o complicados de mantener en una aplicación grande. Por eso vamos a usar Styled Components para mejorar esa experiencia. Por último, testear una aplicación puede ser largo, tedioso y de no encontrar un buen método para hacerlo puede ser contraproducente al tiempo de desarrollo, por eso vamos a usar Cypress, un framework de testing que nos va a permitir hacer tests de integración fáciles y completos para nuestra aplicación.
+> 👨‍🏫 React es una librería para crear interfaces de usuario, la vamos a usar para darle estructura y manejar la lógica de nuestra aplicación.
+> React no nos da una herramienta para manejar los estilos y usar solamente el CSS que soportan los navegadores hace que nuestros estilos sean verbosos, limitados o complicados de mantener en una aplicación grande.
+> Por eso vamos a usar Styled Components para mejorar esa experiencia.
+> Por último, testear una aplicación puede ser largo, tedioso y de no encontrar un buen método para hacerlo puede ser contraproducente al tiempo de desarrollo, por eso vamos a usar Cypress, un framework de testing que nos va a permitir hacer tests de integración fáciles y completos para nuestra aplicación.
 
 ## Qué vamos a hacer?
 Vamos a armar el ritmosustanciometro, una app que obtiene el porcentaje de ritmo y sustancia de un individuo en tiempo real (así que puede devolver dos valores diferentes para el mismo individuo, ya que el nivel de ritmo y sustancia puede variar en todo momento)
@@ -11,7 +14,7 @@ Vamos a armar el ritmosustanciometro, una app que obtiene el porcentaje de ritmo
 * Cualquier editor de texto, recomiendo [Visual Studio Code](https://code.visualstudio.com/).
 * [Node.js](https://nodejs.org/es/) instalado y al menos la version 5.2.0 de `npm` (para poder usar `npx`).
 
-> *Tips*: Para ver que versión de `npm` tenes instalada, en consola corré: `npm -v`. Para instalar la última versión estable de `npm` corré: `npm install -g npm`. Agregá `sudo` al principio si te da problemas al instalar.
+> *Tips*: Para ver que versión de `npm` tenes instalada, en consola corré: `npm -v`. Para instalar la última versión estable de `npm` corré: `npm install -g npm`. Agregá `sudo` al principio si te da problemas de permisos al instalar.
 
 ## Materiales
 * 🔗 [Endpoint obtener ritmo y sustancia](https://wt-3581e5a0e6c19bb4a0552203b2738a9d-0.run.webtask.io/obtener-ritmo-y-sustancia)
@@ -20,7 +23,7 @@ Vamos a armar el ritmosustanciometro, una app que obtiene el porcentaje de ritmo
 
 ## 📚 Qué son las herramientas que vamos a usar?
 * [React](./docs/tools/react.md)
-* Styled Components
+* [Styled Components](./docs/tools/stylde-components/md)
 * Cypress
 * NPM
 * Create React App
