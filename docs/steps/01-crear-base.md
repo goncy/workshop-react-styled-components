@@ -1,12 +1,12 @@
 # Creando nuestra aplicación base
-Para inicializar nuestra aplicación vamos a usar una herramienta llamada `create-react-app`, esta herramienta nos crea un proyecto de React listo y configurado para poder trabajar no solo con React sino que también con ES6 y varias herramientas que nos van a ahorrar mucho tiempo.
+Para crear nuestra aplicación base vamos a usar una herramienta llamada `create-react-app`, esta herramienta nos crea un proyecto de React listo y configurado para poder trabajar no solo con React sino que también con ES6 y varias herramientas que nos van a ahorrar mucho tiempo.
 
 ## Como la bajo/instalo/uso?
 La forma mas fácil es usando `npx`, una herramienta de `npm` que viene integrada desde la version 5.2.0, así que si seguiste los requerimientos e instalaste la últimas versión estable de `node` y `npm` la tenés, sino...
 
 *IMG*
 
-Para usarla simplemente tenemos que ir a la terminal, parados en la carpeta donde queramos crear nuestro proyecto (`~/projects/` es la mía por ejemplo) y corremos:
+Para usarla simplemente tenemos que ir a la terminal, pararnos en la carpeta donde queramos crear nuestro proyecto (`~/projects/` es la mía por ejemplo) y corremos:
 ```bash
 npx create-react-app ritmosustanciometro
 ```

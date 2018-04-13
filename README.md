@@ -1,8 +1,9 @@
 # De cero a tested en dos japish👋 con React, Styled Components y Cypress
-> 👨‍🏫 React es una librería para crear interfaces de usuario, la vamos a usar para darle estructura y manejar la lógica de nuestra aplicación.
-> React no nos da una herramienta para manejar los estilos y usar solamente el CSS que soportan los navegadores hace que nuestros estilos sean verbosos, limitados o complicados de mantener en una aplicación grande.
-> Por eso vamos a usar Styled Components para mejorar esa experiencia.
-> Por último, testear una aplicación puede ser largo, tedioso y de no encontrar un buen método para hacerlo puede ser contraproducente al tiempo de desarrollo, por eso vamos a usar Cypress, un framework de testing que nos va a permitir hacer tests de integración fáciles y completos para nuestra aplicación.
+> `React` es una librería para crear interfaces de usuario, la vamos a usar para darle estructura y manejar la lógica de nuestra aplicación.
+
+> Usar solamente el CSS que soportan los navegadores hace que nuestros estilos sean verbosos, limitados o complicados de mantener en una aplicación grande. Por eso vamos a usar `Styled Components` para mejorar esa experiencia.
+
+> Testear una aplicación puede ser largo, tedioso y de no encontrar un buen método para hacerlo puede ser contraproducente al tiempo de desarrollo, por eso vamos a usar `Cypress`, un framework de testing que nos va a permitir hacer tests de integración fáciles y completos para nuestra aplicación.
 
 ## Qué vamos a hacer?
 Vamos a armar el ritmosustanciometro, una app que obtiene el porcentaje de ritmo y sustancia de un individuo en tiempo real (así que puede devolver dos valores diferentes para el mismo individuo, ya que el nivel de ritmo y sustancia puede variar en todo momento)
@@ -12,6 +13,9 @@ Vamos a armar el ritmosustanciometro, una app que obtiene el porcentaje de ritmo
 ## Requisitos
 * Cualquier editor de texto, recomiendo [Visual Studio Code](https://code.visualstudio.com/).
 * [Node.js](https://nodejs.org/es/) instalado, recomendable la última versión estable.
+
+## Recomendable
+* Experiencia básica con `npm` (instalar paquetes / correr scripts)
 
 > *Tip*: Para ver que versión de `npm` tenes instalada, una vez que tengas instalado `node`, en consola corré: `npm -v`.
 > Para instalar la última versión estable de `npm` corré: `npm install -g npm`.
