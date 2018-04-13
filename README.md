@@ -22,7 +22,7 @@ Vamos a armar el ritmosustanciometro, una app que obtiene el porcentaje de ritmo
 * 🕹 [Demo proyecto terminado](https://goncy.github.io/charla-fcc-react-styled-components-cypress)
 * 📻 [Código proyecto terminado](https://github.com/goncy/charla-fcc-react-styled-components-cypress/tree/master/proyecto)
 
-## 📚 Introducción a las herramientas que vamos a usar
+## 📚 Introducción
 * [React](./docs/tools/react.md)
 * [Styled Components](./docs/tools/styled-components.md)
 * [Cypress](./docs/tools/cypress.md)
