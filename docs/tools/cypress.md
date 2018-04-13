@@ -18,7 +18,7 @@ yarn add cypress --dev
 
 - Configuración
 En la raíz de nuestro proyecto (al mismo nivel que el `package.json`), creamos un archivo `cypress.json` con el siguiente contenido:
-```json
+```javascript
 {
   "baseUrl": "http://localhost:3000" // Url de la aplicación que vamos a testear, si la URL de tu aplicación es diferente, cambialo
 }
@@ -26,7 +26,7 @@ En la raíz de nuestro proyecto (al mismo nivel que el `package.json`), creamos 
 
 - Ejecución
 Vamos a nuestro `package.json` y agregamos un nuevo script `cypress:open` (o el nombre que quieras), al final de todo:
-```json
+```javascript
 "scripts": {
   ...
   "cypress:open": "cypress open"
