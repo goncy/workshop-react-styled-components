@@ -112,3 +112,6 @@ const Holis = (props) => <h1>Holis, {props.name}</h1>;
 
 ## Extras que no vamos a ver en este curso
 * [Redux](https://redux.js.org/), una librería para manejar el estado de nuestra aplicación `React`, podés ver [este curso](https://egghead.io/courses/getting-started-with-redux) que lo da su creador, Dan Abramov
+
+## Conclusión
+Con React vamos a armar las vistas de nuestra aplicación, con esto ya deberíamos estar para empezar a darle estilos!
