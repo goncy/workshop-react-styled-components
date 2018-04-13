@@ -8,6 +8,7 @@ Una de las principales diferencias que podemos encontrar es que `HTML` solo desc
 
 Entonces, al `React` ser `JavaScript`, nos da todas las ventajas que `JavaScript` nos da a la hora de desarrollar una aplicación, como permitirnos cambiar el contenido de nuestra aplicación dinamicamente, mostrar información que traigamos de un servidor, etc.
 
+## Sintaxis
 Como dijimos antes, `React` esta pensado para ser usado con componentes, por lo tanto, trae una clase integrada en la librería, llamada `Component`, la cual vamos a usar para construir nuestra aplicación.
 
 Este sería un ejemplo de un componente de `React`:
@@ -41,13 +42,20 @@ class ContadorDeSustancias extends React.Component { // Creamos una clase, con u
 export default ContenedorDeSustancias // Exportamos el componente para poder importarlo desde otros componentes
 ```
 
+> Tip: A la hora de escribir código `React` hay algunos atributos que cambian, `onclick` se escribe `onClick` (todos los atributos se escriben en `camelCase` en vez de `lowercase`), `class` se escribe `className` (ya que `class` es una palabra reservada en `JavaScript`). No te preocupes, estas cosas se aprenden con el tiempo y `Google` siempre es tu amigo (además de que los errores suelen aparecer en consola para ayudarnos)
+
+*IMG*
+
 Si renderizamos este componente obtendríamos algo así:
+
 *GIF*
 
+# State
 Ves como siempre vemos actualizado el valor actualizado de `kilos`? Esto pasa por que cada vez que actualizamos el estado de nuestro componente con `setState`, todo el componente vuelve a renderizarse con el estado nuevo (lo mismo pasa cuando cambian las `props`, vemos eso en un rato).
 
 > Nota: Siempre que queramos actualizar el estado de nuestro componente debemos hacerlo con `setState` y no como `this.state.kilos = 2`, ya que si lo hacemos de la segunda manera, `React` no escucha el cambio y no vuelve a renderizar nuestro componente.
 
+## Props
 Por último, que son esas `props` de las que hablaba antes?, las props son la manera de pasarle parametros a un componente, dijimos que los componentes podían ser reutilizable, bueno, si no podrían recibir información externa no siempre serían útiles. Vamos a usar nuestro `ContenedorDeSustancias` y modificarlo para que use una prop `sustancia`.
 
 ```jsx
@@ -95,23 +103,22 @@ Entonces ahora podriamos usar nuestro componente de la siguiente manera:
 Y se vería así:
 *GIF*
 
-Esto es todo lo que necesitamos de `React` para crear nuestro `ritmosustanciometro`!
-
 > Gotcha: La diferencia entre `state` y `props` puede no entenderse muy bien al principio, solo recordá, un componente puede cambiar su propio estado directamente (con `setState`), pero no sus `props`.
 
-> Tip: Si solo necesitamos `props` y no necesitamos `state`, podemos escribir un `stateless component` en vez de un `Component` de `React`, para hacerlo, en vez de crear una clase que extiende de `Component`, creamos simplemente una función de la siguiente manera:
+## Stateless components
+Si solo necesitamos `props` y no necesitamos `state`, podemos escribir un `stateless component` en vez de un `Component` de `React`, para hacerlo, en vez de crear una clase que extiende de `Component`, creamos simplemente una función de la siguiente manera:
 ```jsx
-function Holis(props) {
-  return <h1>Holis, {props.name}</h1>;
+function Japish(props) {
+  return <h1>Japish, {props.name}</h1>;
 }
 ```
 > O si queremos hacerlo con una `const`:
 ```jsx
-const Holis = (props) => <h1>Holis, {props.name}</h1>;
+const Japish = (props) => <h1>Japish, {props.name}</h1>;
 ```
 
 ## Extras que no vamos a ver en este curso
 * [Redux](https://redux.js.org/), una librería para manejar el estado de nuestra aplicación `React`, podés ver [este curso](https://egghead.io/courses/getting-started-with-redux) que lo da su creador, Dan Abramov
 
 ## Conclusión
-Con React vamos a armar las vistas de nuestra aplicación, con esto ya deberíamos estar para empezar a darle estilos!
+Esto es todo lo que necesitamos de `React` para crear nuestro `ritmosustanciometro`!

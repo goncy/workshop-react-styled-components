@@ -14,21 +14,26 @@ Ahora que tenemos disponible la variable `styled`, podemos usar algunos de los c
 ```jsx
 import styled from "styled-components"
 
-// Usamos styled.button
-export const Boton = styled.button`
-  padding: 12px;
-  background: rebeccapurple;
+// Usamos styled.p
+export const Japisher = styled.p`
+  font-size: 2rem;
+
+  &:after {
+    content: ' japish👋';
+  }
 `
 
-// Usamos styled.p
-export const Parrafo = styled.p`
-  font-size: 2rem;
+// Usamos styled.button
+export const BotonLoco = styled.button`
+  padding: 12px;
+  background: green;
+  color: white;
 `
 ```
 Luego podríamos importar estos componentes donde necesitemos y usarlos asi:
 ```jsx
-<Boton>Mi botón</Boton>
-<Parrafo>Mi parrafo</Parrafo>
+<Japisher>Mi parrafo</Japisher>
+<BotonLoco>Soy reverde</BotonLoco>
 ```
 *IMG*
 
@@ -37,14 +42,14 @@ Es algo que siempre me pregunté y decidí no seguir un pattern para esto, simpl
 ```jsx
 import styled from "styled-components"
 
-const Tarjeta = styled.div`
+const Tarjetilla = styled.div`
   padding: 12px;
   background: white;
   border: 1px solid whitesmoke;
   border-radius: 4px;
 `
 
-export default Tarjeta
+export default Tarjetilla
 ```
 O usarlo dentro de nuestros componentes, por ejemplo que `components/Inicio.js` sea:
 ```jsx
@@ -53,11 +58,15 @@ import styled from "styled-components"
 
 const Container = styled.div`
   padding: 12px;
+
+  .titulo {
+    font-size: 24px;
+  }
 `
 
 const Inicio = () => (
   <Container>
-    <h1>Inicio</h1>
+    <h1 className="titulo">Inicio</h1>
     <div>Contenido</div>
   </Container>
 )

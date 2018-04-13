@@ -1,5 +1,4 @@
 # De cero a tested en dos japish👋 con React, Styled Components y Cypress
-
 > 👨‍🏫 React es una librería para crear interfaces de usuario, la vamos a usar para darle estructura y manejar la lógica de nuestra aplicación.
 > React no nos da una herramienta para manejar los estilos y usar solamente el CSS que soportan los navegadores hace que nuestros estilos sean verbosos, limitados o complicados de mantener en una aplicación grande.
 > Por eso vamos a usar Styled Components para mejorar esa experiencia.
@@ -16,27 +15,26 @@ Vamos a armar el ritmosustanciometro, una app que obtiene el porcentaje de ritmo
 
 > *Tip*: Para ver que versión de `npm` tenes instalada, una vez que tengas instalado `node`, en consola corré: `npm -v`.
 > Para instalar la última versión estable de `npm` corré: `npm install -g npm`.
-> Agregá `sudo` al principio si te da problemas de permisos al instalar en `Linux` o `Mac`.
+> Agregá `sudo` al principio si te da problema de permisos al instalar en `Linux` o `Mac`.
 
 ## Materiales
 * 🔗 [Endpoint obtener ritmo y sustancia](https://wt-3581e5a0e6c19bb4a0552203b2738a9d-0.run.webtask.io/obtener-ritmo-y-sustancia)
 * 🕹 [Demo proyecto terminado](https://goncy.github.io/charla-fcc-react-styled-components-cypress)
 * 📻 [Código proyecto terminado](https://github.com/goncy/charla-fcc-react-styled-components-cypress/tree/master/proyecto)
 
-## 📚 Qué son las herramientas que vamos a usar?
-* Create React App
+## 📚 Introducción a las herramientas que vamos a usar
 * [React](./docs/tools/react.md)
 * [Styled Components](./docs/tools/styled-components.md)
 * [Cypress](./docs/tools/cypress.md)
 
 ## 👣 Pasos
-* 🛠 Crear nuestra aplicación base
+* 🛠 [Crear nuestra aplicación base](./docs/steps/01-crear-base.md)
 * ➕ Agregar Cypress y Styled Components
 * ⚗️ Armar el ritmosustanciometro
 * ✅ Testear el ritmosustanciometro
 
 ## 📝 Ejercicio
-Ahora es tu turno, usa React, Styled Components y Cypress para crear tu propio ritmosustanciometro! (O si te animás, otra cosa)
+Ahora es tu turno, usa `React`, `Styled Components` y `Cypress` para crear tu propio `ritmosustanciometro`! (O si te animás, otra cosa), no te limites a copiar lo que hace el proyecto original, metele tu ritmo y sustancia para armar algo piola, sino *japish*👋
 
 ## 🤷‍♂️ Y ahora que?
 Ahora sabes un poco de muchas cosas, convertí lo poco en mucho y hace mucho con poco!, we, re filosofo el goncy, *Japish*👋. Tomá en cuenta algo, acabás de ver muchas cosas nuevas, cada una tiene su complejidad, no esperes saber todo ya ni te desmotives si no sale a la primera, después de todo, nadie nace sabiendo hacer un fernet, o codear en React. Asi que no te olvides, en el [Slack de freeCodeCampBA](https://freecodecampba.org/chat/), estamos para ayudar y contestar dudas siempre.
