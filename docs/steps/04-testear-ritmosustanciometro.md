@@ -1,1 +1,1 @@
-[⏪ Armando el `ritmosustanciometro`](./02-armar-ritmosustanciometro.md) - [Testeando el `ritmosustanciometro` ⏩](./04-testear-ritmosustanciometro.md)
+[⏪ Armando el `ritmosustanciometro`](./02-armar-ritmosustanciometro.md) | [Testeando el `ritmosustanciometro` ⏩](./04-testear-ritmosustanciometro.md)

@@ -123,4 +123,4 @@ const Japish = (props) => <h1>Japish, {props.name}</h1>;
 ## Conclusión
 Esto es todo lo que necesitamos de `React` para crear nuestro `ritmosustanciometro`!
 
-[⏪ Inicio](../../README.md) - [Styled Components ⏩](./styled-components.md)
+[⏪ Inicio](../../README.md) | [Styled Components ⏩](./styled-components.md)

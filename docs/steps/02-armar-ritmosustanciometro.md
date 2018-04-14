@@ -235,4 +235,4 @@ export default App;
 ## Conclusión
 Felicitaciones!, ya tenés el `ritmosustanciometro` andando, tiene mucho `ritmo` pero le falta `sustancia`. Vamos a darsela con `Styled Components`
 
-[⏪ Creando nuestra aplicación base](./01-crear-base.md) - [Estilando el `ritmosustanciometro` ⏩](./03-estilar-ritmosustanciometro.md)
+[⏪ Creando nuestra aplicación base](./01-crear-base.md) | Estilando el `ritmosustanciometro` ⏩](./03-estilar-ritmosustanciometro.md)

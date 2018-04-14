@@ -183,4 +183,4 @@ Hay muchas cosas copadas que todavía no vimos, pero ya vimos suficiente y no qu
 ## Conclusión
 Todavía queda mucho por aprender de `Styled Components`, pero con esto ya estamos listos para darle estilos a nuestro ritmosustanciometro ⚗️
 
-[⏪ React](./react.md) - [Cypress ⏩](./cypress.md)
+[⏪ React](./react.md) | [Cypress ⏩](./cypress.md)

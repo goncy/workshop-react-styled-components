@@ -49,7 +49,7 @@ describe("Demo", () => {
     cy.get("[data-test='nombre']") // Obtenemos el campo de nombre
       .type('goncy{enter}') // Escribimos goncy y forzamos un enter
 
-    cy.contains("ritmosustancia de goncy - 100"); // Esperamos que nuestra aplicación tenga "ritmosustancia de goncy - 100" impreso en alguna parte
+    cy.contains("goncy - 100"); // Esperamos que nuestra aplicación tenga "goncy - 100" impreso en alguna parte
 
     cy.contains("borrar evidencia").click(); // Limpiamos todos los resultados
 
@@ -69,4 +69,4 @@ Hay muchas cosas copadas que todavía no vimos, pero ya vimos suficiente y no qu
 ## Conclusión
 Con esto ya tendríamos prácticamente todo testeado, ahora solo tenemos que hacer nuestra aplicación!
 
-[⏪ Styled Components](./styled-components.md) - [Creando nuestra aplicación base ⏩](../steps/01-crear-base.md)
+[⏪ Styled Components](./styled-components.md) | [Creando nuestra aplicación base ⏩](../steps/01-crear-base.md)
