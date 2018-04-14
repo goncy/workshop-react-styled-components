@@ -29,3 +29,5 @@ Guardamos y luego de unos segundos vamos a ver que nuestro navegador se refresco
 
 ## Conclusión
 Felicitaciones! ya tenés una aplicación `React` corriendo y lista para modificar.
+
+[⏪ Cypress](../tools/cypress.md) - [Armando el `ritmosustanciometro` ⏩](./02-armar-ritmosustanciometro.md)

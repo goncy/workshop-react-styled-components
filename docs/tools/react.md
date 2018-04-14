@@ -1,9 +1,9 @@
-# React? Se fuma?
+# `React`? Se fuma?
 * `React` es una librería para crear interfaces de usuario
 * Su sintaxis es parecida al HTML y se llama JSX
 * `React` propone dividir nuestra aplicación en componentes que podamos reutilizar
 
-## Que diferencia hay entre HTML y React?
+## Que diferencia hay entre `HTML` y `React`?
 Una de las principales diferencias que podemos encontrar es que `HTML` solo describe la estructura de nuestra aplicación en el momento de carga, si no usamos `JavaScript`, nuestra aplicación o su información nunca van a cambiar una vez que fueron cargadas. Mientras tanto, `React`, es una librería construida con `JavaScript`, el hecho de que podamos verlo parecido a HTML es gracias a JSX, una sintaxis que antes de que nuestra aplicación sea renderizada en el navegador, es convertida a Vanilla `JavaScript` (por Babel generalmente, una herramienta que nos permite usar código o funcionalidades de `JavaScript` que todavía los navegadores no soportan, entre otras cosas).
 
 Entonces, al `React` ser `JavaScript`, nos da todas las ventajas que `JavaScript` nos da a la hora de desarrollar una aplicación, como permitirnos cambiar el contenido de nuestra aplicación dinamicamente, mostrar información que traigamos de un servidor, etc.
@@ -122,3 +122,5 @@ const Japish = (props) => <h1>Japish, {props.name}</h1>;
 
 ## Conclusión
 Esto es todo lo que necesitamos de `React` para crear nuestro `ritmosustanciometro`!
+
+[⏪ Inicio](../../README.md) - [Styled Components ⏩](./styled-components.md)

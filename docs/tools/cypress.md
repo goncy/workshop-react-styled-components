@@ -1,4 +1,4 @@
-# Cypress? Se aspira?
+# `Cypress`? Se aspira?
 * Framework de testing
 * API fácil
 * Tiene modo de interfaz gráfica
@@ -14,14 +14,6 @@ Algo muy importante que tiene `Cypress` es lo fácil que es empezar a escribir n
 npm install cypress --save-dev
 # O con yarn
 yarn add cypress --dev
-```
-
-- Configuración
-En la raíz de nuestro proyecto (al mismo nivel que el `package.json`), creamos un archivo `cypress.json` con el siguiente contenido:
-```javascript
-{
-  "baseUrl": "http://localhost:3000" // Url de la aplicación que vamos a testear, si la URL de tu aplicación es diferente, cambialo
-}
 ```
 
 - Ejecución
@@ -50,7 +42,7 @@ describe("Demo", () => {
 
   it("debería devolver el ritmo y sustancia que le digamos y luego limpiar la evidencia", () => {
     cy.server(); // Le decimos a Cypress que vamos a hacer uso de su server
-    cy.visit("/"); // Le decimos a Cypress que vaya al inicio de nuestra app
+    cy.visit("http://localhost:3000/"); // Le decimos a Cypress que vaya al inicio de nuestra aplicación, en este caso suponemos que la aplicación esta corriendo en la URL `http://localhost:3000/`
 
     cy.route("GET", "/obtener-ritmo-y-sustancia", 100); // Le decimos a Cypress que la próxima vez que nuestra aplicación haga un pedido a una url que termine con `obtener-ritmo-y-sustancia`, la respuesta siempre sea 100
 
@@ -76,3 +68,5 @@ Hay muchas cosas copadas que todavía no vimos, pero ya vimos suficiente y no qu
 
 ## Conclusión
 Con esto ya tendríamos prácticamente todo testeado, ahora solo tenemos que hacer nuestra aplicación!
+
+[⏪ Styled Components](./styled-components.md) - [Creando nuestra aplicación base ⏩](../steps/01-crear-base.md)

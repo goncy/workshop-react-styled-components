@@ -1,4 +1,4 @@
-# Styled Components? Se Inyecta?
+# `Styled Components`? Se Inyecta?
 * `Styled Components` es una libreria de `CSS-in-JS` (Vamos a escribir JS que parece `CSS` y va a darle estilos a nuestros componentes)
 * No tiene configuración
 * Nos permite tener un `theme` (Vamos a poder tener nuestros colores, tamaños, etc. En un archivo solo y usarlos en toda la app, también vamos a poder cambiarlos en `runtime`)
@@ -182,3 +182,5 @@ Hay muchas cosas copadas que todavía no vimos, pero ya vimos suficiente y no qu
 
 ## Conclusión
 Todavía queda mucho por aprender de `Styled Components`, pero con esto ya estamos listos para darle estilos a nuestro ritmosustanciometro ⚗️
+
+[⏪ React](./react.md) - [Cypress ⏩](./cypress.md)
