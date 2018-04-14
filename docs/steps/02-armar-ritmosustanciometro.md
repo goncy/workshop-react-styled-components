@@ -1,5 +1,5 @@
 # Armando el `ritmosustanciometro`
-Ahora que ya tenemos nuestra aplicación base vamos a hacer una serie de cosas:
+Ahora que ya tenemos nuestra aplicación base vamos a:
 
 1. Borrar las cosas que no necesitamos del componente `App`
 2. Crear un componente `Ritmosustanciometro`
@@ -20,6 +20,7 @@ Nosotros vamos a encargarnos tanto de la lógica como de los estilos de la aplic
 Por lo tanto `App.js` nos quedaría asi:
 
 ```jsx
+// App.js
 import React, { Component } from 'react';
 
 class App extends Component {
@@ -40,27 +41,30 @@ Vamos a crear un nuevo archivo `Ritmosustanciometro.js` dentro de `src` (al mism
 Adentro vamos a crear un `Stateless component` llamado `Ritmosustanciometro` que va a recibir dos props, `nombre` y `ritmosustancia`, las cuales va a mostrar dentro de un `div`, nos quedaría algo así:
 
 ```jsx
+// Ritmosustanciometro.js
 import React from "react";
 
-const RitmoSustanciometro = ({nombre, ritmosustancia}) => (
+const Ritmosustanciometro = ({nombre, ritmosustancia}) => (
   <div>
     {nombre} - {ritmosustancia}
   </div>
 );
 
-export default RitmoSustanciometro;
+export default Ritmosustanciometro;
 ```
 
 ### Agregar al `state` de `App` una propiedad para guardar el `nombre` de la persona y otra para el listado de `individuos`
 Vamos a ir a `App.js` y vamos a agregar al `state` las propiedades `nombre` que va a ser un `string` vacío y `individuos` que va a ser un `array` vacío:
 
 ```jsx
+// App.js
 import React, { Component } from 'react';
 
 class App extends Component {
+  // Agregamos `state` a nuestro componente, va a estar disponible en `this.state`
   state = {
-    nombre: '',
-    individuos: []
+    nombre: '', // Agregamos una propiedad nombre que va a iniciar como un `string` vacío
+    individuos: [] // Agregamos una propiedad individuos que va a iniciar como un `array` vacío
   }
 
   render() {
@@ -79,6 +83,7 @@ export default App;
 Agregamos un nuevo `form` debajo de nuestro `h1` para meter nuestro campo de texto `nombre` y nuestro botón de `obtener ritmosustancia`:
 
 ```jsx
+// App.js
 import React, { Component } from 'react';
 
 class App extends Component {
@@ -91,6 +96,7 @@ class App extends Component {
     return (
       <div>
         <h1>Ritmosustanciometro</h1>
+        {/* Agregamos nuestro formulario con un campo de texto y un botón */}
         <form>
           <input type="text" />
           <button type="submit">Obtener ritmosustancia</button>
@@ -107,6 +113,7 @@ export default App;
 Para eso vamos a crear una función en `App` llamada `actualizarNombre` que va a tomar un `evento` de `change` y va a usar el valor del campo en el que se llamó para setear la propiedad `nombre` del `state`. Vamos a ejecutarla en el `onChange` de nuestro campo `nombre` y a su vez, vamos a tomar el valor `nombre` del `state` y vamos a asignarlo al `value` del campo `nombre`:
 
 ```jsx
+// App.js
 import React, { Component } from 'react';
 
 class App extends Component {
@@ -115,7 +122,9 @@ class App extends Component {
     individuos: []
   }
 
+  // Creamos una función `actualizarNombre` que va a estar disponible en `this.actualizarNombre`
   actualizarNombre = (event) => {
+    // `setState` va a tomar nuestro estado anterior y lo va a combinar con el objeto que le pasemos, el resultado de eso, va a ser nuestro nuevo estado, en este caso estamos reemplazando `nombre` por el contenido del campo de texto donde se ejecutó el evento
     this.setState({nombre: event.target.value})
   }
 
@@ -124,6 +133,7 @@ class App extends Component {
       <div>
         <h1>Ritmosustanciometro</h1>
         <form>
+          {/* con `onChange` le decimos a `React` que ejecute una función cada vez que haya un cambio de valor en el campo, con `value` le decimos que queremos que el valor del campo siempre sea el valor que le pasemos, por lo tanto, al actualizar el campo, se va a reemplazar nuestro estado, y ese estado va a ser el nuevo valor de nuestro campo */}
           <input type="text" onChange={this.actualizarNombre} value={this.state.nombre} />
           <button type="submit">Obtener ritmosustancia</button>
         </form>
@@ -139,9 +149,10 @@ export default App;
 Vamos a importar nuestro componente `Ritmosustanciometro` y vamos a iterar usando el método `map` de `Array` para mostrar un `Ritmosustanciometro` por cada item dentro de `individuos`, pasando `nombre` y `ritmosustancia` por `props`
 
 ```jsx
+// App.js
 import React, { Component } from 'react';
 
-import Ritmosustanciometro from './Ritmosustanciometro';
+import Ritmosustanciometro from './Ritmosustanciometro'; // Importamos nuestro componente `Ritmosustanciometro`
 
 class App extends Component {
   state = {
@@ -157,6 +168,7 @@ class App extends Component {
     return (
       <div>
         <h1>Ritmosustanciometro</h1>
+        {/* Usamos `map` para iterar sobre cada individuo de nuestra lista de individuos y creamos un `Ritmosustanciometro por cada individuo, pasando el `nombre` y el valor de `ritmosustancia` por `props` */}
         {this.state.individuos.map((individuo, indice) =>
           <Ritmosustanciometro
             key={indice}
@@ -180,6 +192,7 @@ export default App;
 Agregar una función `obtenerRitmosustancia` al componente `App` que al hacer `submit` del `form`, se obtenga la `ritmosustancia` del servidor, se agregue a la lista de `individuos` y reinicie el valor `nombre` del `state`:
 
 ```jsx
+// App.js
 import React, { Component } from 'react';
 
 import Ritmosustanciometro from './Ritmosustanciometro';
@@ -194,14 +207,18 @@ class App extends Component {
     this.setState({nombre: event.target.value})
   }
 
+  // Creamos una función `async` `obtenerRitmosustancia` que va a estar disponible en `this.obtenerRitmosustancia`
   obtenerRitmosustancia = async (event) => {
-    event.preventDefault();
+    event.preventDefault(); // Evitamos que la aplicación se recargue por el `submit` del `form`
 
+    // Hacemos un `fetch` a nuestro `endpoint` para obtener un valor de `ritmosustancia`
     const request = await fetch("https://wt-3581e5a0e6c19bb4a0552203b2738a9d-0.run.webtask.io/obtener-ritmosustancia")
+    // Obtenemos el valor de la respuesta
     const response = await request.json()
 
     this.setState({
-      nombre: '',
+      nombre: '', // Reiniciamos el valor de nombre
+      // Usando `concat` agregamos un nuevo individuo al `array` de `individuos` que ya tenemos en nuestro `state`, pasando el `nombre` de nuestro `state` y el valor de `ritmosustancia` que nos devolvió el servidor
       individuos: this.state.individuos.concat({
         nombre: this.state.nombre,
         ritmosustancia: response
@@ -220,6 +237,7 @@ class App extends Component {
             ritmosustancia={individuo.ritmosustancia}
           />
         )}
+        {/* Ejecutamos la funcion `obtenerRitmosustancia` en `onSubmit` */}
         <form onSubmit={this.obtenerRitmosustancia}>
           <input type="text" onChange={this.actualizarNombre} value={this.state.nombre} />
           <button type="submit">Obtener ritmosustancia</button>
@@ -235,4 +253,4 @@ export default App;
 ## Conclusión
 Felicitaciones!, ya tenés el `ritmosustanciometro` andando, tiene mucho `ritmo` pero le falta `sustancia`. Vamos a darsela con `Styled Components`
 
-[⏪ Creando nuestra aplicación base](./01-crear-base.md) | Estilando el `ritmosustanciometro` ⏩](./03-estilar-ritmosustanciometro.md)
+[⏪ Creando nuestra aplicación base](./01-crear-base.md) | [Estilando el `ritmosustanciometro` ⏩](./03-estilar-ritmosustanciometro.md)

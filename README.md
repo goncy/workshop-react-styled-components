@@ -46,6 +46,10 @@ Ahora es tu turno, usa `React`, `Styled Components` y `Cypress` para crear tu pr
 * Estilar el `ritmosustanciometro`
 * Agregar un botón para eliminar cada `ritmosustancia` individualmente
 * Agregar tests para estas nuevas funcionalidades
+* Pasar los estilos de `index.css` a `injectGlobal` de `Styled Components`
+
+## 🎁 Premio
+Van a tener un par de días para pulir los estilos de su `ritmosustanciometro`, luego se va a votar en el [Slack de freeCodeCampBA](https://freecodecampba.org/chat/) y el resultado ganador va a ser el nuevo demo de este repositorio!
 
 ## 🤷‍♂️ Y ahora que?
 Ahora sabes un poco de muchas cosas, convertí lo poco en mucho y hace mucho con poco!, we, re filosofo el goncy, *Japish*👋. Tomá en cuenta algo, acabás de ver muchas cosas nuevas, cada una tiene su complejidad, no esperes saber todo ya ni te desmotives si no sale a la primera, después de todo, nadie nace sabiendo hacer un fernet, o codear en React. Asi que no te olvides, en el [Slack de freeCodeCampBA](https://freecodecampba.org/chat/), estamos para ayudar y contestar dudas siempre.

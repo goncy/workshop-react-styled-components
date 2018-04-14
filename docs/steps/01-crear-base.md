@@ -1,7 +1,7 @@
 # Creando nuestra aplicación base
 Para crear nuestra aplicación base vamos a usar una herramienta llamada `create-react-app`, esta herramienta nos crea un proyecto de React listo y configurado para poder trabajar no solo con React sino que también con ES6 y varias herramientas que nos van a ahorrar mucho tiempo.
 
-## Como la bajo/instalo/uso?
+## Crear el proyecto base
 La forma mas fácil es usando `npx`, una herramienta de `npm` que viene integrada desde la version 5.2.0, así que si seguiste los requerimientos e instalaste la últimas versión estable de `node` y `npm` la tenés, sino...
 
 *IMG*
@@ -20,7 +20,7 @@ Una vez que termine, vamos a tener una nueva carpeta llamada `ritmosustanciometr
 
 *IMG*
 
-## Como modifico el proyecto?
+## Asegurarnos que todo anda
 Ahora vamos a ir a nuestro editor por defecto (yo voy a usar `Visual Studio Code`) y abrímos la carpeta `ritmosustanciometro`.
 Ahora para asegurarnos de que todo está andando correctamente, vamos a la carpeta `src` y abrimos el archivo `App.js`, vamos a buscar el texto `Welcome to React` y lo vamos a cambiar por `Ritmosustanciometro`.
 Guardamos y luego de unos segundos vamos a ver que nuestro navegador se refresco automaticamente y podemos ver el nuevo texto en pantalla.
