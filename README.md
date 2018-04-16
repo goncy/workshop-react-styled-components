@@ -14,13 +14,12 @@ Vamos a armar el `ritmosustanciometro`, una app que obtiene el porcentaje de rit
 * Cualquier editor de texto, recomiendo [Visual Studio Code](https://code.visualstudio.com/).
 * [Node.js](https://nodejs.org/es/) instalado, con `npm` en la última versión estable.
 
-## Recomendable
-* Experiencia básica con `npm` (instalar paquetes / correr scripts)
-* Experiencia básica con `React` y `JavaScript`
-
 > *Tip*: Para ver que versión de `npm` tenes instalada, una vez que tengas instalado `node`, en consola corré: `npm -v`.
 > Para instalar la última versión estable de `npm` corré: `npm install -g npm`.
 > Agregá `sudo` al principio si te da problema de permisos al instalar en `Linux` o `Mac`.
+
+## Recomendable
+* Experiencia básica con `React` y `JavaScript`
 
 ## Materiales
 * 🔗 [Endpoint obtener ritmo y sustancia](https://wt-3581e5a0e6c19bb4a0552203b2738a9d-0.run.webtask.io/obtener-ritmosustancia)
@@ -44,7 +43,7 @@ Ahora es tu turno, usa `React`, `Styled Components` y `Cypress` para crear tu pr
 * Deshabilitar el boton de `obtener ritmosustancia` si el nombre esta vacío
 * Deshabilitar el botón de `obtener ritmosustancia` mientras se está haciendo el pedido al servidor
 * Estilar el `ritmosustanciometro`
-* Agregar un botón para eliminar cada `ritmosustancia` individualmente
+* Agregar un botón para eliminar todos los resultados de `ritmosustancia`
 * Agregar tests para estas nuevas funcionalidades
 * Pasar los estilos de `index.css` a `injectGlobal` de `Styled Components`
 

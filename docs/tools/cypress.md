@@ -10,10 +10,7 @@ Algo muy importante que tiene `Cypress` es lo fácil que es empezar a escribir n
 
 - Instalación
 ```bash
-# Con NPM
 npm install cypress --save-dev
-# O con yarn
-yarn add cypress --dev
 ```
 
 - Ejecución
@@ -26,41 +23,108 @@ Vamos a nuestro `package.json` y agregamos un nuevo script `cypress:open` (o el 
 ```
 Una vez agregado ejecutamos en consola:
 ```bash
-npm cypress:open
+npm run cypress:open
 ```
 
 ## Escribiendo nuestro primer test
-Cuando queremos testear nuestra aplicación, muchas veces tenemos que hacer algo super tedioso que es encontrar una manera de resolver los pedidos que nuestra aplicación hace al servidor. Por suerte `Cypress` tiene una muy buena solución a esto, vamos a ver como escribiríamos un test:
+Una vez que ejecutamos `Cypress` por primera vez, vamos a ver que se creó una nueva carpeta `cypress` en nuestro proyecto, vamos a crear un nuevo archivo `demo.test.js` en `cypress/integration` y dentro vamos a poner:
 ```javascript
-describe("Demo", () => {
-  // Este hack es necesario por que Cypress no se lleva muy bien con el fetch nativo del browser, con suerte no lo vamos a necesitar en un futuro, basicamente reemplaza el fetch nativo por null para poder reemplazarlo con el fetch de cypress, esto va a servir para poder decidir que van a devolver nuestros calls http, si en tu aplicación no estas usando el fetch nativo del browser y estás usando request, axios, jQuery u otra alternativa, podes omitir el hook `before`
-  before(function() {
-    Cypress.on("window:before:load", win => {
-      win.fetch = null;
-    });
-  });
+describe('Mi primer test', function() {
+  it('true es igual a true', function() {
+    expect(true).to.equal(true)
+  })
+})
+```
 
-  it("debería devolver el ritmo y sustancia que le digamos y luego limpiar la evidencia", () => {
-    cy.server(); // Le decimos a Cypress que vamos a hacer uso de su server
-    cy.visit("http://localhost:3000/"); // Le decimos a Cypress que vaya al inicio de nuestra aplicación, en este caso suponemos que la aplicación esta corriendo en la URL `http://localhost:3000/`
+*IMG*
 
-    cy.route("GET", "/obtener-ritmo-y-sustancia", 100); // Le decimos a Cypress que la próxima vez que nuestra aplicación haga un pedido a una url que termine con `obtener-ritmo-y-sustancia`, la respuesta siempre sea 100
+Una vez que ejecutemos esto, vamos a la ventana de `Cypress` y vamos a ver que esta nuestro nuevo archivo `demo.test.js`, vamos a ejecutarlo y vemos que nuestro test pasa!
 
-    cy.get("[data-test='nombre']") // Obtenemos el campo de nombre
-      .type('goncy{enter}') // Escribimos goncy y forzamos un enter
+Ahora solo para testear que `Cypress` funciona correctamente vamos a modificar nuestro test para que falle:
+```javascript
+describe('Mi primer test', function() {
+  it('true es igual a true', function() {
+    expect(true).to.equal(false)
+  })
+})
+```
 
-    cy.contains("goncy - 100"); // Esperamos que nuestra aplicación tenga "goncy - 100" impreso en alguna parte
+*IMG*
 
-    cy.contains("borrar evidencia").click(); // Limpiamos todos los resultados
+Si vemos que falla sabemos que `Cypress` está funcionando y configurado correctamente para que empecemos a escribir nuestros verdaderos tests. 
+`Cypress` además implementa algunas librerias externas, por ejemplo, `expect` es de la librería [Chai](http://chaijs.com/) y `describe` e `it` son de la librería [Mocha](https://mochajs.org/)
 
-    cy.get("[data-test='resultados']") // Obtenemos el contendor de resultados
-      .should('be.empty')  // Nos aseguramos de que este vacío
-  });
-});
+## Visitando una página
+Una de las primeras cosas que necesitamos hacer para testear nuestra aplicación es entrar a la `url` de la misma, para eso podemos usar la función `cy.visit`. Para este ejemplo vamos a usar la [aplicación de prueba](https://example.cypress.io) de `Cypress`. Vamos a agregar un nuevo test a `demo.test.js`:
+```javascript
+describe('Mi segundo test', function() {
+  it('visita la aplicación de prueba', function() {
+    cy.visit('https://example.cypress.io')
+  })
+})
+```
+Una vez que hacemos esto nos dirigimos a la ventana de `Cypress` y podemos ver en el listado de la izquierda la acción `VISIT`, si la `url` que ingresamos en `cy.visit` devuelve una respuesta de `status` `404` o `500` el test hubiera fallado
+
+## Obteniendo un elemento
+Para obtener un elemento desde `Cypress` tenemos muchas alternativas, una de las mas convenientes para tests rápidos puede ser `cy.contains`, que simplemente busca un elemento que posea ese contenido. Vamos a agregar un nuevo test buscando un elemento que posea `type` en su contenido:
+```javascript
+describe('Mi tercer test', function() {
+  it('contiene un boton con texto type', function() {
+    cy.visit('https://example.cypress.io')
+
+    cy.contains('type')
+  })
+})
+```
+Vemos que nuestro test pasa aunque no hayamos declarado ningún `expect` o `assert`, eso es por que muchos de los comandos de `Cypress` están preparados para eso, si no se hubiera encontrado un elemento con contenido `type`, el test hubiera fallado
+
+## Clickear un elemento
+Como podríamos hacer para clickear el botón que contenía `type` del test anterior? Muy simple:
+```javascript
+describe('Mi tercer test', function() {
+  it('contiene un boton con texto type y lo clickea', function() {
+    cy.visit('https://example.cypress.io')
+
+    cy.contains('type').click()
+  })
+})
+```
+De esta manera podemos ir leyendo nuestros tests como una historia e ir esperando los resultados deseados
+
+## Hacer un `assertion`
+Nosotros sabemos que al clickear manualmente el botón type, la `url` de nuestra app va a cambiar, vamos a testear que eso funcione correctamente con `cy.url` y `should`:
+```javascript
+describe('Mi tercer test', function() {
+  it('al clickear el boton type navega a commands/actions', function() {
+    cy.visit('https://example.cypress.io')
+
+    cy.contains('type').click()
+
+    cy.url().should('include', '/commands/actions')
+  })
+})
+```
+
+## Escribir en un input
+Por último, vamos a chequear que los inputs de texto andan correctamente:
+```javascript
+describe('Mi tercer test', function() {
+  it('al clickear el boton type navega a commands/actions y prueba el input de mail', function() {
+    cy.visit('https://example.cypress.io')
+
+    cy.contains('type').click()
+
+    cy.url().should('include', '/commands/actions')
+
+    cy.get('.action-email')
+      .type('ritmo@sustancia.com')
+      .should('have.value', 'ritmo@sustancia.com')
+  })
+})
 ```
 
 ## Extras que no vamos a ver en este curso
-Hay muchas cosas copadas que todavía no vimos, pero ya vimos suficiente y no quiero marear a nadie.
+Lo que vimos recién no es nada comparado a lo que se puede hacer, si quieren seguir un poco más este ejemplo que estuvimos viendo, pueden hacerlo en [la página oficial de `Cypress`](https://docs.cypress.io/guides/getting-started/writing-your-first-test.html#Adding-More-Commands-and-Assertions)
 
 * [Fixtures](https://docs.cypress.io/api/commands/fixture.html) nos permite devolver archivos completos o ejecutar funciones como respuesta de un pedido de servidor.
 * [Configuración de ambientes](https://docs.cypress.io/api/plugins/configuration-api.html#) nos permite correr nuestros tests con diferentes configuraciones dependiendo que ambiente queramos testear.
