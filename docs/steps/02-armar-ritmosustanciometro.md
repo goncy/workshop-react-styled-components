@@ -237,7 +237,6 @@ class App extends Component {
         <h1>Ritmosustanciometro</h1>
         {this.state.individuos.map((individuo, indice) =>
           <Ritmosustanciometro
-            key={indice}
             nombre={individuo.nombre}
             ritmosustancia={individuo.ritmosustancia}
           />

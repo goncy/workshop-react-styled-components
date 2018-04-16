@@ -42,7 +42,11 @@ class ContadorDeSustancias extends React.Component { // Creamos una clase, con u
 export default ContenedorDeSustancias // Exportamos el componente para poder importarlo desde otros componentes
 ```
 
-> Tip: A la hora de escribir código `React` hay algunos atributos que cambian, `onclick` se escribe `onClick` (todos los atributos se escriben en `camelCase` en vez de `lowercase`), `class` se escribe `className` (ya que `class` es una palabra reservada en `JavaScript`). No te preocupes, estas cosas se aprenden con el tiempo y `Google` siempre es tu amigo (además de que los errores suelen aparecer en consola para ayudarnos)
+A la hora de escribir código `React` hay algunos atributos que cambian:
+* `onclick` se escribe `onClick` (todos los atributos se escriben en `camelCase` en vez de `lowercase`)
+* `class` se escribe `className` (ya que `class` es una palabra reservada en `JavaScript`)
+
+No te preocupes, estas cosas se aprenden con el tiempo y `Google` siempre es tu amigo (además de que los errores suelen aparecer en consola para ayudarnos)
 
 *IMG*
 
