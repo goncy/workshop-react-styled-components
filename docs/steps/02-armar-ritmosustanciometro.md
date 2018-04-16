@@ -46,7 +46,7 @@ import React from "react";
 
 const Ritmosustanciometro = ({nombre, ritmosustancia}) => (
   <div>
-    {nombre} - {ritmosustancia}
+    {nombre}: {ritmosustancia}
   </div>
 );
 
@@ -109,8 +109,12 @@ class App extends Component {
 export default App;
 ```
 
+Nos va a quedar algo así:
+
+![04](../../assets/02-ritmosustanciometro-base.jpg)
+
 ### Conectar el campo de `nombre` a la propiedad `nombre` del `state`
-Para eso vamos a crear una función en `App` llamada `actualizarNombre` que va a tomar un `evento` de `change` y va a usar el valor del campo en el que se llamó para setear la propiedad `nombre` del `state`. Vamos a ejecutarla en el `onChange` de nuestro campo `nombre` y a su vez, vamos a tomar el valor `nombre` del `state` y vamos a asignarlo al `value` del campo `nombre`:
+Para eso vamos a crear una función en `App` llamada `actualizarNombre` que va a tomar un `evento` de `change` y va a usar el valor del campo en el que se llamó para actualizar el valor de la propiedad `nombre` del `state`. Vamos a ejecutarla en el `onChange` de nuestro campo `nombre` y a su vez, vamos a tomar el valor `nombre` del `state` y vamos a asignarlo al `value` del campo `nombre`:
 
 ```jsx
 // App.js
@@ -146,8 +150,7 @@ export default App;
 ```
 
 ### Iterar el listado de `individuos` y mostrar un `Ritmosustanciometro` por cada item
-Vamos a importar nuestro componente `Ritmosustanciometro` y vamos a iterar usando el método `map` de `Array` para mostrar un `Ritmosustanciometro` por cada item dentro de `individuos`, pasando `nombre` y `ritmosustancia` por `props`
-
+Vamos a importar nuestro componente `Ritmosustanciometro` y vamos a iterar usando el método `map` de `Array` para mostrar un `Ritmosustanciometro` por cada item dentro de `individuos`, pasando `nombre` y `ritmosustancia` por `props`, para asegurarnos de que anda, vamos a agregar un `individuo` inicial a nuestro `state`:
 ```jsx
 // App.js
 import React, { Component } from 'react';
@@ -157,7 +160,10 @@ import Ritmosustanciometro from './Ritmosustanciometro'; // Importamos nuestro c
 class App extends Component {
   state = {
     nombre: '',
-    individuos: []
+    individuos: [{
+      nombre: 'goncy',
+      ritmosustancia: 100
+    }]
   }
 
   actualizarNombre = (event) => {
@@ -169,9 +175,8 @@ class App extends Component {
       <div>
         <h1>Ritmosustanciometro</h1>
         {/* Usamos `map` para iterar sobre cada individuo de nuestra lista de individuos y creamos un `Ritmosustanciometro por cada individuo, pasando el `nombre` y el valor de `ritmosustancia` por `props` */}
-        {this.state.individuos.map((individuo, indice) =>
+        {this.state.individuos.map((individuo) =>
           <Ritmosustanciometro
-            key={indice}
             nombre={individuo.nombre}
             ritmosustancia={individuo.ritmosustancia}
           />
@@ -217,12 +222,12 @@ class App extends Component {
     const response = await request.json()
 
     this.setState({
-      nombre: '', // Reiniciamos el valor de nombre
       // Usando `concat` agregamos un nuevo individuo al `array` de `individuos` que ya tenemos en nuestro `state`, pasando el `nombre` de nuestro `state` y el valor de `ritmosustancia` que nos devolvió el servidor
       individuos: this.state.individuos.concat({
         nombre: this.state.nombre,
         ritmosustancia: response
-      })
+      }),
+      nombre: '', // Reiniciamos el valor de nombre
     })
   }
 
