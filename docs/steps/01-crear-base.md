@@ -14,14 +14,14 @@ Esto va a tomar el paquete `create-react-app` de `npm` y lo va a ejecutar sin in
 
 Una vez que termine, vamos a tener una nueva carpeta llamada `ritmosustanciometro` en la carpeta donde corrimos el comando (`~/projects/ritmosustanciometro` por ejemplo), vamos a hacerle caso al script y vamos a poner en consola `cd ritmosustanciometro` y luego `npm start`. Luego de esto (y unos segundos) se debería abrir una pestaña del navegador con una ventana como esta:
 
-![03](../../assets/01-cra-landing.jpg)
+![02](../../assets/01-cra-landing.jpg)
 
 ## Asegurarnos que todo anda
 Ahora vamos a ir a nuestro editor por defecto (yo voy a usar `Visual Studio Code`) y abrímos la carpeta `ritmosustanciometro`.
 Ahora para asegurarnos de que todo está andando correctamente, vamos a la carpeta `src` y abrimos el archivo `App.js`, vamos a buscar el texto `Welcome to React` y lo vamos a cambiar por `Ritmosustanciometro`.
 Guardamos y luego de unos segundos vamos a ver que nuestro navegador se refresco automaticamente y podemos ver el nuevo texto en pantalla.
 
-![04](../../assets/01-cra-modified-landing.jpg)
+![03](../../assets/01-cra-modified-landing.jpg)
 
 ## Conclusión
 Felicitaciones! ya tenés una aplicación `React` corriendo y lista para modificar.

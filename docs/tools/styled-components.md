@@ -35,10 +35,10 @@ Luego podríamos importar estos componentes donde necesitemos y usarlos asi:
 <Japisher>Mi parrafo</Japisher>
 <BotonLoco>Soy reverde</BotonLoco>
 ```
-*IMG*
+![01](../../assets/styled-1.jpg)
 
-## Crear solo `Styled Components` o usarlo en nuestros componentes comunes?
-Es algo que siempre me pregunté y decidí no seguir un pattern para esto, simplemente usar lo que sea necesario para el caso. Por lo tanto, podríamos tener un component como `components/Tarjeta.js` que sea:
+## Conviene usarlo como contenedor o crear componentes reutilizables siempre?
+Es algo que siempre me pregunté y decidí no seguir un patron para esto, simplemente usar lo que sea necesario para el caso. Por lo tanto, podríamos tener un componente como `components/Tarjeta.js` que sea:
 ```jsx
 import styled from "styled-components"
 
@@ -138,15 +138,17 @@ const rotar360 = keyframes`
 `
 
 const Reloj = styled.img`
-  animation: ${rotate360} infinite 60s linear;
+  animation: ${rotar360} infinite 10s linear;
   &:hover {
-    animation: ${rotate360} infinite 1s linear;
+    animation: ${rotar360} infinite 1s linear;
   }
 `
-```
-Esto va a hacer que el elemento tarde 1 minuto en rotar 360 grados, pero al hacerle `hover` va a rotar en solo un segundo.
 
-*GIF*
+<Reloj src="https://placehold.it/64/64" />
+```
+Esto va a hacer que el elemento tarde 10 segundos en rotar 360 grados, pero al hacerle `hover` va a rotar en solo un segundo.
+
+![02](../../assets/styled-rotation.gif)
 
 ## Estilos globales
 Si queremos agregar estilos globales podemos usar la función `injectGlobal` de `Styled Components`, podemos crear un archivo aparte o simplemente ejecutarla en nuestro archivo `index.js`, `App.js` o cualquier archivo que se ejecute en nuestra aplicación. Se haría asi:

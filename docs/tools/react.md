@@ -3,15 +3,15 @@
 * Su sintaxis es parecida al HTML y se llama JSX
 * `React` propone dividir nuestra aplicación en componentes que podamos reutilizar
 
-## Que diferencia hay entre `HTML` y `React`?
-Una de las principales diferencias que podemos encontrar es que `HTML` solo describe la estructura de nuestra aplicación en el momento de carga, si no usamos `JavaScript`, nuestra aplicación o su información nunca van a cambiar una vez que fueron cargadas. Mientras tanto, `React`, es una librería construida con `JavaScript`, el hecho de que podamos verlo parecido a HTML es gracias a JSX, una sintaxis que antes de que nuestra aplicación sea renderizada en el navegador, es convertida a Vanilla `JavaScript` (por Babel generalmente, una herramienta que nos permite usar código o funcionalidades de `JavaScript` que todavía los navegadores no soportan, entre otras cosas).
+## Que diferencia hay entre `HTML` y `JSX`?
+Una de las principales diferencias que podemos encontrar es que `HTML` es un `lenguaje`. Solo describe la estructura de nuestra aplicación, una vez el cargada, el contenido de nuestra aplicación nunca va a cambiar.
+Mientras tanto, `JSX`, es solo una sintaxis parecida a `HTML`, que los navegadores no puede ejecutar.
+Antes de que nuestra aplicación sea renderizada, todo el código escrito en `JSX` es convertido a `Vanilla JavaScript` por herramientas conocidas como transpiladores, como `Babel` o `Traceur`, que nos permiten usar funcionalidades de `JavaScript` que todavía no son soportadas por todos los navegadores (entre otras cosas).
 
-Entonces, al `React` ser `JavaScript`, nos da todas las ventajas que `JavaScript` nos da a la hora de desarrollar una aplicación, como permitirnos cambiar el contenido de nuestra aplicación dinamicamente, mostrar información que traigamos de un servidor, etc.
+> Tip: Si querés ver como se ve `JSX` ya transpilado a `JavasScript` o como deberías escribir `React` sin `JSX`, podes usar [este](https://jsx-live.now.sh/) live editor de [Belen Curcio](https://twitter.com/okbel)
 
-## Sintaxis
-Como dijimos antes, `React` esta pensado para ser usado con componentes, por lo tanto, trae una clase integrada en la librería, llamada `Component`, la cual vamos a usar para construir nuestra aplicación.
-
-Este sería un ejemplo de un componente de `React`:
+## Escribiendo un componente de `React`
+`React` trae una clase integrada, llamada `Component`, que nos permite crear componentes para utilizar en nuestra aplicación, este sería un ejemplo de un componente contador con un botón de sumar y restar:
 ```jsx
 import React from "react" // Importamos React siempre que necesitemos usar JSX
 
@@ -42,25 +42,25 @@ class ContadorDeSustancias extends React.Component { // Creamos una clase, con u
 export default ContenedorDeSustancias // Exportamos el componente para poder importarlo desde otros componentes
 ```
 
-A la hora de escribir código `React` hay algunos atributos que cambian:
+Si renderizamos este componente obtendríamos esto:
+
+![01](../../assets/react-counter.gif)
+
+A la hora de escribir código `React` hay algunos atributos que cambian con respecto a `HTML`:
 * `onclick` se escribe `onClick` (todos los atributos se escriben en `camelCase` en vez de `lowercase`)
 * `class` se escribe `className` (ya que `class` es una palabra reservada en `JavaScript`)
 
 No te preocupes, estas cosas se aprenden con el tiempo y `Google` siempre es tu amigo (además de que los errores suelen aparecer en consola para ayudarnos)
 
-*IMG*
-
-Si renderizamos este componente obtendríamos algo así:
-
-*GIF*
-
 # State
-Ves como siempre vemos actualizado el valor actualizado de `kilos`? Esto pasa por que cada vez que actualizamos el estado de nuestro componente con `setState`, todo el componente vuelve a renderizarse con el estado nuevo (lo mismo pasa cuando cambian las `props`, vemos eso en un rato).
+Ves como siempre vemos actualizado el valor de `kilos`? Esto pasa por que cada vez que actualizamos el estado de nuestro componente con `setState`, todo el componente vuelve a renderizarse con el estado nuevo.
 
 > Nota: Siempre que queramos actualizar el estado de nuestro componente debemos hacerlo con `setState` y no como `this.state.kilos = 2`, ya que si lo hacemos de la segunda manera, `React` no escucha el cambio y no vuelve a renderizar nuestro componente.
 
 ## Props
-Por último, que son esas `props` de las que hablaba antes?, las props son la manera de pasarle parametros a un componente, dijimos que los componentes podían ser reutilizable, bueno, si no podrían recibir información externa no siempre serían útiles. Vamos a usar nuestro `ContenedorDeSustancias` y modificarlo para que use una prop `sustancia`.
+Las props son la manera de pasar parámetros a un componente, al igual que el `state`, si las `props` cambian, nuestro componente se vuelve a renderizar.
+Dijimos que los componentes deberían ser reutilizables, bueno, si no podrían recibir información externa no siempre serían útiles.
+Vamos a usar nuestro `ContenedorDeSustancias` y modificarlo para que reciba una prop `sustancia`.
 
 ```jsx
 import React from "react" // Importamos `React` siempre que necesitemos usar JSX
@@ -98,16 +98,17 @@ class ContadorDeSustancias extends React.Component {
 export default ContenedorDeSustancias
 ```
 
-Entonces ahora podriamos usar nuestro componente de la siguiente manera:
+Entonces ahora podríamos usar nuestro componente de la siguiente manera:
 ```jsx
 <ContenedorDeSustancias sustancia="pasto" />
 <ContenedorDeSustancias sustancia="azucar" />
 ```
 
 Y se vería así:
-*GIF*
 
-> Gotcha: La diferencia entre `state` y `props` puede no entenderse muy bien al principio, solo recordá, un componente puede cambiar su propio estado directamente (con `setState`), pero no sus `props`.
+![02](../../assets/react-counter-prop.gif)
+
+> Gotcha: La diferencia entre `state` y `props` puede no entenderse muy bien al principio, solo recordá, un componente puede cambiar su propio estado directamente (con `setState`), pero no puede cambiar sus `props`.
 
 ## Stateless components
 Si solo necesitamos `props` y no necesitamos `state`, podemos escribir un `stateless component` en vez de un `Component` de `React`, para hacerlo, en vez de crear una clase que extiende de `Component`, creamos simplemente una función de la siguiente manera:
@@ -116,9 +117,13 @@ function Japish(props) {
   return <h1>Japish, {props.name}</h1>;
 }
 ```
-> O si queremos hacerlo con una `const`:
+O si queremos hacerlo con una `const`:
 ```jsx
 const Japish = (props) => <h1>Japish, {props.name}</h1>;
+```
+Y luego lo usaríamos así:
+```jsx
+<Japish name="Goncy" /> // -> <h1>Japish, Goncy</h1>
 ```
 
 ## Extras que no vamos a ver en este curso

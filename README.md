@@ -8,7 +8,7 @@
 ## Qué vamos a hacer?
 Vamos a armar el `ritmosustanciometro`, una app que obtiene el porcentaje de ritmo y sustancia de un individuo en tiempo real (así que puede devolver dos valores diferentes para el mismo individuo, ya que el nivel de ritmo y sustancia puede variar en todo momento)
 
-![07](./assets/00-ritmosustanciometro.gif)
+![01](./assets/00-ritmosustanciometro.gif)
 
 ## Requisitos
 * Cualquier editor de texto, recomiendo [Visual Studio Code](https://code.visualstudio.com/).
