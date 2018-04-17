@@ -47,9 +47,9 @@ describe("Demo", () => {
     cy.route("GET", "/obtener-ritmosustancia", 100); // Le decimos a Cypress que la próxima vez que nuestra aplicación haga un pedido a una url que termine con `obtener-ritmo-y-sustancia`, la respuesta siempre sea 100
 
     cy.get("[data-test='nombre']") // Obtenemos el campo de nombre
-      .type('goncy{enter}') // Escribimos goncy y forzamos un enter
+      .type('fcc{enter}') // Escribimos fcc y forzamos un enter
 
-    cy.contains("goncy: 100"); // Esperamos que nuestra aplicación tenga "goncy - 100" impreso en alguna parte
+    cy.contains("fcc: 100"); // Esperamos que nuestra aplicación tenga "fcc - 100" impreso en alguna parte
   });
 });
 ```
@@ -62,6 +62,8 @@ Mmm, nuestro test falla, nos dice que no encuentra el elemento `[data-test='nomb
 ...
 ```
 Ahora vemos que nuestro test pasa!
+
+![01](../../assets/04-ritmosustanciometro.gif)
 
 ### Conclusión
 Tenemos nuestra aplicación creada, estilada y testeada, felicitaciones!

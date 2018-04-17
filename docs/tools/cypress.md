@@ -36,7 +36,7 @@ describe('Mi primer test', function() {
 })
 ```
 
-*IMG*
+![01](../../assets/cypress-pass-1.png)
 
 Una vez que ejecutemos esto, vamos a la ventana de `Cypress` y vamos a ver que esta nuestro nuevo archivo `demo.test.js`, vamos a ejecutarlo y vemos que nuestro test pasa!
 
@@ -49,7 +49,7 @@ describe('Mi primer test', function() {
 })
 ```
 
-*IMG*
+![02](../../assets/cypress-fail-1.png)
 
 Si vemos que falla sabemos que `Cypress` está funcionando y configurado correctamente para que empecemos a escribir nuestros verdaderos tests. 
 `Cypress` además implementa algunas librerias externas, por ejemplo, `expect` es de la librería [Chai](http://chaijs.com/) y `describe` e `it` son de la librería [Mocha](https://mochajs.org/)
@@ -63,6 +63,9 @@ describe('Mi segundo test', function() {
   })
 })
 ```
+
+![05](../../assets/cypress-pass-5.png)
+
 Una vez que hacemos esto nos dirigimos a la ventana de `Cypress` y podemos ver en el listado de la izquierda la acción `VISIT`, si la `url` que ingresamos en `cy.visit` devuelve una respuesta de `status` `404` o `500` el test hubiera fallado
 
 ## Obteniendo un elemento
@@ -76,6 +79,9 @@ describe('Mi tercer test', function() {
   })
 })
 ```
+
+![06](../../assets/cypress-pass-6.png)
+
 Vemos que nuestro test pasa aunque no hayamos declarado ningún `expect` o `assert`, eso es por que muchos de los comandos de `Cypress` están preparados para eso, si no se hubiera encontrado un elemento con contenido `type`, el test hubiera fallado
 
 ## Clickear un elemento
@@ -89,6 +95,9 @@ describe('Mi tercer test', function() {
   })
 })
 ```
+
+![07](../../assets/cypress-pass-7.png)
+
 De esta manera podemos ir leyendo nuestros tests como una historia e ir esperando los resultados deseados
 
 ## Hacer un `assertion`
@@ -104,6 +113,8 @@ describe('Mi tercer test', function() {
   })
 })
 ```
+
+![03](../../assets/cypress-pass-3.png)
 
 ## Escribir en un input
 Por último, vamos a chequear que los inputs de texto andan correctamente:
@@ -122,6 +133,8 @@ describe('Mi tercer test', function() {
   })
 })
 ```
+
+![04](../../assets/cypress-pass-4.png)
 
 ## Extras que no vamos a ver en este curso
 Lo que vimos recién no es nada comparado a lo que se puede hacer, si quieren seguir un poco más este ejemplo que estuvimos viendo, pueden hacerlo en [la página oficial de `Cypress`](https://docs.cypress.io/guides/getting-started/writing-your-first-test.html#Adding-More-Commands-and-Assertions)
