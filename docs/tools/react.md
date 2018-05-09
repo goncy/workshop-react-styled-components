@@ -1,6 +1,6 @@
 # `React`? Se fuma?
 * `React` es una librería para crear interfaces de usuario
-* Su sintaxis es parecida al HTML y se llama JSX
+* Su sintaxis es parecida al `HTML` y se llama `JSX`
 * `React` propone dividir nuestra aplicación en componentes que podamos reutilizar
 
 ## Que diferencia hay entre `HTML` y `JSX`?
@@ -52,7 +52,7 @@ A la hora de escribir código `React` hay algunos atributos que cambian con resp
 
 No te preocupes, estas cosas se aprenden con el tiempo y `Google` siempre es tu amigo (además de que los errores suelen aparecer en consola para ayudarnos)
 
-# State
+## State
 Ves como siempre vemos actualizado el valor de `kilos`? Esto pasa por que cada vez que actualizamos el estado de nuestro componente con `setState`, todo el componente vuelve a renderizarse con el estado nuevo.
 
 > Nota: Siempre que queramos actualizar el estado de nuestro componente debemos hacerlo con `setState` y no como `this.state.kilos = 2`, ya que si lo hacemos de la segunda manera, `React` no escucha el cambio y no vuelve a renderizar nuestro componente.
