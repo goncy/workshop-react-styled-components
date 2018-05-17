@@ -19,11 +19,6 @@ export const GapedImage = styled(Image)`
   margin: 24px auto;
 `;
 
-// Container
-export const Container = styled("div")`
-  height: ${({height}) => height || "100%"};
-`;
-
 // Fit list
 export const FitList = styled(List)`
   margin: auto;
