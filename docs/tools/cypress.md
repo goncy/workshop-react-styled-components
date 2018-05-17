@@ -9,21 +9,23 @@
 Algo muy importante que tiene `Cypress` es lo fácil que es empezar a escribir nuestros tests (y lo fácil que son de escribir), veamos como empezar.
 
 - Instalación
+
 ```bash
 npm install cypress --save-dev
 ```
 
 - Ejecución
-Vamos a nuestro `package.json` y agregamos un nuevo script `cypress:open` (o el nombre que quieras), al final de todo:
+
+Vamos a nuestro `package.json` y modificamos/creamos el script `test` con el comando `cypress open`:
 ```javascript
 "scripts": {
   ...
-  "cypress:open": "cypress open"
+  "test": "cypress open"
 }
 ```
 Una vez agregado ejecutamos en consola:
 ```bash
-npm run cypress:open
+npm test
 ```
 
 ## Escribiendo nuestro primer test
@@ -51,7 +53,7 @@ describe('Mi primer test', function() {
 
 ![02](../../assets/cypress-fail-1.png)
 
-Si vemos que falla sabemos que `Cypress` está funcionando y configurado correctamente para que empecemos a escribir nuestros verdaderos tests. 
+Si vemos que falla sabemos que `Cypress` está funcionando y configurado correctamente para que empecemos a escribir nuestros verdaderos tests.
 `Cypress` además implementa algunas librerias externas, por ejemplo, `expect` es de la librería [Chai](http://chaijs.com/) y `describe` e `it` son de la librería [Mocha](https://mochajs.org/)
 
 ## Visitando una página

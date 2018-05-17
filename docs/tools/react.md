@@ -39,7 +39,7 @@ class ContadorDeSustancias extends React.Component { // Creamos una clase, con u
   }
 }
 
-export default ContenedorDeSustancias // Exportamos el componente para poder importarlo desde otros componentes
+export default ContadorDeSustancias // Exportamos el componente para poder importarlo desde otros componentes
 ```
 
 Si renderizamos este componente obtendríamos esto:
@@ -60,7 +60,7 @@ Ves como siempre vemos actualizado el valor de `kilos`? Esto pasa por que cada v
 ## Props
 Las props son la manera de pasar parámetros a un componente, al igual que el `state`, si las `props` cambian, nuestro componente se vuelve a renderizar.
 Dijimos que los componentes deberían ser reutilizables, bueno, si no podrían recibir información externa no siempre serían útiles.
-Vamos a usar nuestro `ContenedorDeSustancias` y modificarlo para que reciba una prop `sustancia`.
+Vamos a usar nuestro `ContadorDeSustancias` y modificarlo para que reciba una prop `sustancia`.
 
 ```jsx
 import React from "react" // Importamos `React` siempre que necesitemos usar JSX
@@ -95,13 +95,13 @@ class ContadorDeSustancias extends React.Component {
   }
 }
 
-export default ContenedorDeSustancias
+export default ContadorDeSustancias
 ```
 
 Entonces ahora podríamos usar nuestro componente de la siguiente manera:
 ```jsx
-<ContenedorDeSustancias sustancia="pasto" />
-<ContenedorDeSustancias sustancia="azucar" />
+<ContadorDeSustancias sustancia="pasto" />
+<ContadorDeSustancias sustancia="azucar" />
 ```
 
 Y se vería así:
