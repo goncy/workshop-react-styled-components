@@ -5,6 +5,7 @@
   "dependencies": {
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
+    "recompose": "^0.27.0",
     "spectacle-scripts": "2.0.0"
   },
   "scripts": {
