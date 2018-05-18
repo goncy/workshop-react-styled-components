@@ -3,7 +3,7 @@
 * No tiene configuración
 * Nos permite tener un `theme` (Vamos a poder tener nuestros colores, tamaños, etc. En un archivo solo y usarlos en toda la app, también vamos a poder cambiarlos en `runtime`)
 * Nos da algunos beneficios out of the box que `CSS` no nos da (nesting de clases, usar `props` en nuestros estilos, etc)
-* Permite tener componente mas descriptivos
+* Permite tener componentes más descriptivos
 
 ## Como se usa `Styled Components`?
 Al no tener configuración, es muy fácil de usar, como su nombre lo dice son componentes con estilos, por lo tanto lo primero que debemos hacer es importarlos asi:

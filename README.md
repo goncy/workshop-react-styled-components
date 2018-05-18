@@ -25,7 +25,7 @@ Vamos a armar el `ritmosustanciometro`, una app que obtiene el porcentaje de rit
 * 🔗 [Endpoint obtener ritmo y sustancia](https://wt-3581e5a0e6c19bb4a0552203b2738a9d-0.run.webtask.io/obtener-ritmosustancia)
 * 🕹 [Demo proyecto terminado](https://goncy.github.io/charla-fcc-react-styled-components-cypress)
 * 📻 [Código proyecto terminado](https://github.com/goncy/charla-fcc-react-styled-components-cypress/tree/master/proyecto)
-* 🎬 [Slides](https://charla-react-styled-components-cypress.netlify.com/)
+* 🎬 [Slides](https://docs.google.com/presentation/d/1yjr1FHrym7gfBtVy7TFQb8wvH2Akqu_1xZYxi2H_CCM/edit?usp=sharing)
 
 ## 📚 Introducción
 * [React](./docs/tools/react.md)

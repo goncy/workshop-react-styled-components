@@ -114,16 +114,16 @@ Y se vería así:
 Si solo necesitamos `props` y no necesitamos `state`, podemos escribir un `stateless component` en vez de un `Component` de `React`, para hacerlo, en vez de crear una clase que extiende de `Component`, creamos simplemente una función de la siguiente manera:
 ```jsx
 function Japish(props) {
-  return <h1>Japish, {props.name}</h1>;
+  return <h1>Japish, {props.nombre}</h1>;
 }
 ```
 O si queremos hacerlo con una `const`:
 ```jsx
-const Japish = (props) => <h1>Japish, {props.name}</h1>;
+const Japish = (props) => <h1>Japish, {props.nombre}</h1>;
 ```
 Y luego lo usaríamos así:
 ```jsx
-<Japish name="Goncy" /> // -> <h1>Japish, Goncy</h1>
+<Japish nombre="Goncy" /> // -> <h1>Japish, Goncy</h1>
 ```
 
 ## Extras que no vamos a ver en este curso
