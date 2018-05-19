@@ -102,7 +102,7 @@ const Container = styled.div`
 // Usamos `Container` como contenedor de nuestro componente `Ritmosustanciometro`
 const Ritmosustanciometro = ({nombre, ritmosustancia}) => (
   <Container>
-    {nombre} - {ritmosustancia}
+    {nombre}: {ritmosustancia}
   </Container>
 );
 

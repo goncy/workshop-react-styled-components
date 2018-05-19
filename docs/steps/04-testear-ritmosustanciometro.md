@@ -49,7 +49,7 @@ describe("Demo", () => {
     cy.get("[data-test='nombre']") // Obtenemos el campo de nombre
       .type('fcc{enter}') // Escribimos fcc y forzamos un enter
 
-    cy.contains("fcc - 100"); // Esperamos que nuestra aplicación tenga "fcc - 100" impreso en alguna parte
+    cy.contains("fcc: 100"); // Esperamos que nuestra aplicación tenga "fcc: 100" impreso en alguna parte
   });
 });
 ```
