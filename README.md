@@ -11,15 +11,17 @@ Vamos a armar el `ritmosustanciometro`, una app que obtiene el porcentaje de rit
 ![01](./assets/00-ritmosustanciometro.gif)
 
 ## Requisitos
-* Cualquier editor de texto, recomiendo [Visual Studio Code](https://code.visualstudio.com/).
-* [Node.js](https://nodejs.org/es/) instalado, con `npm` en la última versión estable.
+* Cualquier editor de texto, recomiendo [Visual Studio Code](https://code.visualstudio.com/)
+* [Node.js](https://nodejs.org/es/) instalado, con `npm` en la última versión estable
+* Conocimiento básico de JavaScript
 
 > *Tip*: Para ver que versión de `npm` tenes instalada, una vez que tengas instalado `node`, en consola corré: `npm -v`.
 > Para instalar la última versión estable de `npm` corré: `npm install -g npm`.
 > Agregá `sudo` al principio si te da problema de permisos al instalar en `Linux` o `Mac`.
 
 ## Recomendable
-* Experiencia básica con `React` y `JavaScript`
+* Experiencia básica con `React`
+* Conocimiento básico de ES6 (arrow functions, destructuring, template literals, etc)
 
 ## Materiales
 * 🔗 [Endpoint obtener ritmo y sustancia](https://wt-3581e5a0e6c19bb4a0552203b2738a9d-0.run.webtask.io/obtener-ritmosustancia)

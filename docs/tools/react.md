@@ -8,6 +8,12 @@ Una de las principales diferencias que podemos encontrar es que `HTML` es un `le
 Mientras tanto, `JSX`, es solo una sintaxis parecida a `HTML`, que los navegadores no puede ejecutar.
 Antes de que nuestra aplicación sea renderizada, todo el código escrito en `JSX` es convertido a `Vanilla JavaScript` por herramientas conocidas como transpiladores, como `Babel` o `Traceur`, que nos permiten usar funcionalidades de `JavaScript` que todavía no son soportadas por todos los navegadores (entre otras cosas).
 
+Algunas de las diferencias que podemos encontrar a la hora de escribir `JSX` son:
+* Los atributos de los elementos se escriben en `camelCase` (`onClick` en vez de `onclick`)
+* `class` se escribe `className` (ya que `class` es una palabra reservada de `JavaScript`)
+* Todos los componentes deben escribirse en `PascalCase` (mayúscula al principio), ya que así se da cuenta `JSX` de que es un componente y no un elemento `HTML`
+* Siempre que queramos escribir código `JavaScript` debemos hacerlo entre llaves `{}`
+
 > Tip: Si querés ver como se ve `JSX` ya transpilado a `JavasScript` o como deberías escribir `React` sin `JSX`, podes usar [este](https://jsx-live.now.sh/) live editor de [Belen Curcio](https://twitter.com/okbel)
 
 ## Escribiendo un componente de `React`
@@ -45,12 +51,6 @@ export default ContadorDeSustancias // Exportamos el componente para poder impor
 Si renderizamos este componente obtendríamos esto:
 
 ![01](../../assets/react-counter.gif)
-
-A la hora de escribir código `React` hay algunos atributos que cambian con respecto a `HTML`:
-* `onclick` se escribe `onClick` (todos los atributos se escriben en `camelCase` en vez de `lowercase`)
-* `class` se escribe `className` (ya que `class` es una palabra reservada en `JavaScript`)
-
-No te preocupes, estas cosas se aprenden con el tiempo y `Google` siempre es tu amigo (además de que los errores suelen aparecer en consola para ayudarnos)
 
 ## State
 Ves como siempre vemos actualizado el valor de `kilos`? Esto pasa por que cada vez que actualizamos el estado de nuestro componente con `setState`, todo el componente vuelve a renderizarse con el estado nuevo.

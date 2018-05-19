@@ -2,7 +2,7 @@
 Para crear nuestra aplicación base vamos a usar una herramienta llamada `create-react-app`, esta herramienta nos crea un proyecto de `React` listo y configurado para poder trabajar no solo con `React` sino que también con ES6 y varias herramientas que nos van a ahorrar mucho tiempo.
 
 ## Crear el proyecto base
-La forma mas fácil es usando `npx`, una herramienta de `npm` que viene integrada desde la version 5.2.0, así que si seguiste los requerimientos e instalaste la últimas versión estable de `node` y `npm` la tenés, sino...
+La forma mas fácil es usando `npx`, una herramienta de `npm` que viene integrada desde la version 5.2.0, así que si seguiste los requerimientos e instalaste la última versión estable de `node` y `npm` la tenés, sino...
 
 ![01](../../assets/japish.gif)
 
@@ -10,7 +10,7 @@ Para usarla simplemente tenemos que ir a la terminal, pararnos en la carpeta don
 ```bash
 npx create-react-app ritmosustanciometro
 ```
-Esto va a tomar el paquete `create-react-app` de `npm` y lo va a ejecutar sin instalarlo global ni local (esto está bueno para no tener que preocuparse de tener un paquete actualizado como cuando lo instalamos con `npm install -g <paquete>`).
+Esto va a tomar el paquete `create-react-app` de `npm` y lo va a ejecutar sin instalarlo global ni local (esto está bueno para no tener que preocuparse de tener un paquete actualizado, como cuando lo instalamos con `npm install -g <paquete>`).
 
 Una vez que termine, vamos a tener una nueva carpeta llamada `ritmosustanciometro` en la carpeta donde corrimos el comando (`~/projects/ritmosustanciometro` por ejemplo), vamos a hacerle caso al script y vamos a poner en consola `cd ritmosustanciometro` y luego `npm start`. Luego de esto (y unos segundos) se debería abrir una pestaña del navegador con una ventana como esta:
 

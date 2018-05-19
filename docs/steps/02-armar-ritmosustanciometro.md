@@ -13,7 +13,7 @@ Ahora que ya tenemos nuestra aplicación base vamos a:
 Nosotros vamos a encargarnos tanto de la lógica como de los estilos de la aplicación, asi que vamos a borrar todos los archivos y cosas que no necesitamos:
 
 * Archivos: `App.css` y `logo.svg`
-* Del archivo `App.js`: 
+* Del archivo `App.js`:
   * Imports de `App.css` y `logo.svg`
   * Todo el contenido del render, vamos a dejar un `div` con un `h1` adentro que diga `Ritmosustanciometro`
 
@@ -46,7 +46,7 @@ import React from "react";
 
 const Ritmosustanciometro = ({nombre, ritmosustancia}) => (
   <div>
-    {nombre}: {ritmosustancia}
+    {nombre} - {ritmosustancia}
   </div>
 );
 
@@ -223,12 +223,11 @@ class App extends Component {
 
     this.setState({
       // Usando `concat` agregamos un nuevo individuo al `array` de `individuos` que ya tenemos en nuestro `state`, pasando el `nombre` de nuestro `state` y el valor de `ritmosustancia` que nos devolvió el servidor
-      individuos: this.state.individuos.concat({
+      individuos: [...this.state.individuos, {
         nombre: this.state.nombre,
         ritmosustancia: response
-      }),
+      }],
       nombre: '', // Reiniciamos el valor de nombre
-    })
   }
 
   render() {

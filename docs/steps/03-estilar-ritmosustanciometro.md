@@ -12,7 +12,7 @@ Para empezar a estilar nuestro `ritmosustanciometro` vamos a:
 ### Agregar `Styled Components` a nuestro proyecto
 Vamos a volver a la terminal, nos paramos en la carpeta `ritmosustanciometro` y ejecutamos:
 ```bash
-npm add styled-components
+npm install styled-components --save
 ```
 Esperamos que termine de instalar y listo!
 
