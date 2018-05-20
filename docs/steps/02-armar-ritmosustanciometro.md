@@ -228,6 +228,7 @@ class App extends Component {
         ritmosustancia: response
       }],
       nombre: '', // Reiniciamos el valor de nombre
+    })
   }
 
   render() {
