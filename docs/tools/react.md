@@ -19,30 +19,18 @@ Algunas de las diferencias que podemos encontrar a la hora de escribir `JSX` son
 ## Escribiendo un componente de `React`
 `React` trae una clase integrada, llamada `Component`, que nos permite crear componentes para utilizar en nuestra aplicación, este sería un ejemplo de un componente contador con un botón de sumar y restar:
 ```jsx
-import React from "react" // Importamos React siempre que necesitemos usar JSX
+import React, {useState} from "react" // Importamos React siempre que necesitemos usar JSX
 
-class ContadorDeSustancias extends React.Component { // Creamos una clase, con un nombre, empezando con mayúscula, que extienda de `React.Component`
-  state = {
-    kilos: 0 // Le decimos a nuestro componente, que queremos una variable `kilos` dentro del estado
-  }
+const ContadorDeSustancias = () => {
+  const [kilos, setKilos] = useState(0); // Usamos useState para definir un estado para nuestro componente, el primer valor dentro de los corchetes va a ser el `valor` de nuestro estado, el segundo valor va a ser una funcion `seter`, significa que va a actualizar el `valor` de nuestro estado con cualquier cosa que le pasemos
 
-  aumentar = () => { // Creamos una función que va a aumentar los kilos de nuestro estado en 1
-    this.setState({kilos: this.state.kilos + 1}) // `setState` recibe un objeto y define un estado nuevo combinando el viejo y el objeto que le pasamos
-  }
-
-  disminuir = () => { // Y otra función que va a disminuir los kilos en 1
-    this.setState({kilos: this.state.kilos - 1}) // `setState` recibe un objeto y define un estado nuevo combinando el viejo y el objeto que le pasamos
-  }
-
-  render() { // Todo componente debe tener una función render, que debe retornar `un solo` elemento JSX (o null), atentos que ese elemento puede ser un elemento que contenga muchos otros elementos adentro
-    return (
-      <div>
-        <h1>Kilos de sustancia: {this.state.kilos}</h1> {/* Usando llaves podemos meter código javascript dentro de nuestro JSX */}
-        <button onClick={this.disminuir}> - </button> {/* Pasamos nuestra función disminuir a `onClick` para que se ejecute al hacer click */}
-        <button onClick={this.aumentar}> + </button> {/* Hacemos lo mismo con nuestra función aumentar */}
-      </div>
-    )
-  }
+  return (
+    <div>
+      <h1>Kilos de sustancia: {kilos}</h1> {/* Usando llaves podemos meter código javascript dentro de nuestro JSX */}
+      <button onClick={() => setKilos(kilos - 1)}> - </button> {/* Disminuimos nuestro estado al hacer click */}
+      <button onClick={() => setKilos(kilos + 1)}> + </button> {/* Aumentamos nuestro estado al hacer click */}
+    </div>
+  )
 }
 
 export default ContadorDeSustancias // Exportamos el componente para poder importarlo desde otros componentes
@@ -53,9 +41,9 @@ Si renderizamos este componente obtendríamos esto:
 ![01](../../assets/react-counter.gif)
 
 ## State
-Ves como siempre vemos actualizado el valor de `kilos`? Esto pasa por que cada vez que actualizamos el estado de nuestro componente con `setState`, todo el componente vuelve a renderizarse con el estado nuevo.
+Ves como siempre vemos actualizado el valor de `kilos`? Esto pasa por que cada vez que actualizamos el estado de nuestro componente (con `setKilos`), todo el componente vuelve a renderizarse con el estado nuevo.
 
-> Nota: Siempre que queramos actualizar el estado de nuestro componente debemos hacerlo con `setState` y no como `this.state.kilos = 2`, ya que si lo hacemos de la segunda manera, `React` no escucha el cambio y no vuelve a renderizar nuestro componente.
+> Nota: Siempre que queramos actualizar el estado de nuestro componente debemos hacerlo con la funcion seter (`setKilos` en este caso) y no como `kilos = 2`, ya que si lo hacemos de la segunda manera, `React` no escucha el cambio y no vuelve a renderizar nuestro componente.
 
 ## Props
 Las props son la manera de pasar parámetros a un componente, al igual que el `state`, si las `props` cambian, nuestro componente se vuelve a renderizar.
@@ -63,36 +51,18 @@ Dijimos que los componentes deberían ser reutilizables, bueno, si no podrían r
 Vamos a usar nuestro `ContadorDeSustancias` y modificarlo para que reciba una prop `sustancia`.
 
 ```jsx
-import React from "react" // Importamos `React` siempre que necesitemos usar JSX
+import React, {useState} from "react"
 
-class ContadorDeSustancias extends React.Component {
-  // Agregamos un static defaultProps para definir el valor por defecto de nuestras props en caso de que no sean pasadas al componente
-  static defaultProps = {
-    sustancia: 'sustancia desconocida'
-  }
+const ContadorDeSustancias = ({sustancia = 'sustancia desconocida'}) => { /* Hacemos destructuring de una prop `sustancia` y le asignamos un valor por defecto en caso de no ser definida */
+  const [kilos, setKilos] = useState(0);
 
-  state = {
-    kilos: 0
-  }
-
-  aumentar = () => {
-    this.setState({kilos: this.state.kilos + 1})
-  }
-
-  disminuir = () => {
-    this.setState({kilos: this.state.kilos - 1})
-  }
-
-  render() {
-    return (
-      <div>
-        {/* Usamos nuestra prop sustancia */}
-        <h1>Kilos de {this.props.sustancia}: {this.state.kilos}</h1>
-        <button onClick={this.disminuir}> - </button>
-        <button onClick={this.aumentar}> + </button>
-      </div>
-    )
-  }
+  return (
+    <div>
+      <h1>Kilos de sustancia: {kilos}</h1>
+      <button onClick={() => setKilos(kilos - 1)}> - </button>
+      <button onClick={() => setKilos(kilos + 1)}> + </button>
+    </div>
+  )
 }
 
 export default ContadorDeSustancias
@@ -108,23 +78,7 @@ Y se vería así:
 
 ![02](../../assets/react-counter-prop.gif)
 
-> Gotcha: La diferencia entre `state` y `props` puede no entenderse muy bien al principio, solo recordá, un componente puede cambiar su propio estado directamente (con `setState`), pero no puede cambiar sus `props`.
-
-## Stateless components
-Si solo necesitamos `props` y no necesitamos `state`, podemos escribir un `stateless component` en vez de un `Component` de `React`, para hacerlo, en vez de crear una clase que extiende de `Component`, creamos simplemente una función de la siguiente manera:
-```jsx
-function Japish(props) {
-  return <h1>Japish, {props.nombre}</h1>;
-}
-```
-O si queremos hacerlo con una `const`:
-```jsx
-const Japish = (props) => <h1>Japish, {props.nombre}</h1>;
-```
-Y luego lo usaríamos así:
-```jsx
-<Japish nombre="Goncy" /> // -> <h1>Japish, Goncy</h1>
-```
+> Gotcha: La diferencia entre `state` y `props` puede no entenderse muy bien al principio, solo recordá. Un componente puede cambiar su propio estado directamente, pero no el de sus `props`.
 
 ## Extras que no vamos a ver en este curso
 * [Redux](https://redux.js.org/), una librería para manejar el estado de nuestra aplicación `React`, podés ver [este curso](https://egghead.io/courses/getting-started-with-redux) que lo da su creador, Dan Abramov

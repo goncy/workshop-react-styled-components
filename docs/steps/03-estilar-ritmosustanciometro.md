@@ -36,10 +36,8 @@ Vamos a ir a `App.js`. Vamos a importar `Styled Components`, crear un `Container
 
 ```jsx
 // App.js
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import styled from "styled-components" // Importamos `Styled Components`
-
-import Ritmosustanciometro from './Ritmosustanciometro';
 
 // Creamos un container de `styled.div` con unos estilos básicos
 const Container = styled.div`
@@ -47,34 +45,35 @@ const Container = styled.div`
   max-width: 640px;
 `
 
-class App extends Component {
-  state = {
-    nombre: '',
-    individuos: []
+const App = () => {
+  const [nombre, setNombre] = useState('');
+  const [individuos, setIndividuos] = useState([{
+    nombre: 'goncy',
+    ritmosustancia: 100
+  }]);
+
+  // Creamos una función `actualizarNombre`
+  function actualizarNombre = (event) => {
+    // Guardamos en `nombre` lo que escribimos en el campo, lo obtenemos de `event.target.value`
+    setNombre(event.target.value)
   }
 
-  actualizarNombre = (event) => {
-    this.setState({nombre: event.target.value})
-  }
-
-  render() {
-    // Usamos `Container` como contenedor de nuestro componente `App`
-    return (
-      <Container>
-        <h1>Ritmosustanciometro</h1>
-        {this.state.individuos.map((individuo, indice) =>
-          <Ritmosustanciometro
-            nombre={individuo.nombre}
-            ritmosustancia={individuo.ritmosustancia}
-          />
-        )}
-        <form>
-          <input type="text" onChange={this.actualizarNombre} value={this.state.nombre} />
-          <button type="submit">Obtener ritmosustancia</button>
-        </form>
-      </Container>
-    );
-  }
+  return (
+    {/* Usamos `Container` como contenedor de nuestro componente `App` */}
+    <Container>
+      <h1>Ritmosustanciometro</h1>
+      {individuos.map((individuo) =>
+        <Ritmosustanciometro
+          nombre={individuo.nombre}
+          ritmosustancia={individuo.ritmosustancia}
+        />
+      )}
+      <form>
+        <input type="text" onChange={actualizarNombre} value={nombre} />
+        <button type="submit">Obtener ritmosustancia</button>
+      </form>
+    </Container>
+  );
 }
 
 export default App;
