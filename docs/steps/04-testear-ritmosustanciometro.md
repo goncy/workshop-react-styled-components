@@ -60,7 +60,7 @@ describe("Demo", () => {
 Mmm, nuestro test falla, nos dice que no encuentra el elemento `[data-test='nombre']`. Eso es por que es verdad, ese elemento no existe (todavía), los elementos `data-test` se suelen utilizar para poder obtener los elementos deseados de una aplicación, desde los tests. Vamos a ir a nuestra aplicación y en `App.js` vamos a agregarle `[data-test='nombre']` a nuestro campo de texto `nombre`:
 ```jsx
 ...
-<input type="text" data-test="nombre" onChange={this.actualizarNombre} value={this.state.nombre} />
+<input type="text" data-test="nombre" onChange={actualizarNombre} value={nombre} />
 ...
 ```
 Ahora vemos que nuestro test pasa!
