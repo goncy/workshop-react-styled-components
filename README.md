@@ -61,7 +61,7 @@ Ahora sabes un poco de muchas cosas, convertí lo poco en mucho y hace mucho con
 * [Styled Components oficial](https://www.styled-components.com/)
 * [Curso inicial de React](https://egghead.io/courses/the-beginner-s-guide-to-reactjs)
 
-## 📚 Algunas de mis lecciones
+## 🗣 Algunas de mis lecciones
 * [Cypress](https://github.com/goncy/cypress-lesson)
 * [Recompose](https://github.com/goncy/recompose-lesson)
 * [Ramda](https://github.com/goncy/ramda-lesson)
