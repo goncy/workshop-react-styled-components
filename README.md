@@ -5,12 +5,12 @@
 
 > Testear una aplicación puede ser largo y tedioso. De no encontrar un buen método para hacerlo, puede ser contraproducente al tiempo de desarrollo, por eso vamos a usar `Cypress`, un framework de testing que nos va a permitir hacer tests de integración fáciles y completos.
 
-## Qué vamos a hacer?
+## ❓ Qué vamos a hacer?
 Vamos a armar el `ritmosustanciometro`, una app que obtiene el porcentaje de ritmo y sustancia de un individuo en tiempo real (así que puede devolver dos valores diferentes para el mismo individuo, ya que el nivel de ritmo y sustancia puede variar en todo momento)
 
 ![01](./assets/00-ritmosustanciometro.gif)
 
-## Requisitos
+## 🎯 Requisitos
 * Cualquier editor de texto, recomiendo [Visual Studio Code](https://code.visualstudio.com/)
 * [Node.js](https://nodejs.org/es/) instalado, con `npm` en la última versión estable
 * Conocimiento básico de `HTML`, `CSS` y `JavaScript`
@@ -19,12 +19,12 @@ Vamos a armar el `ritmosustanciometro`, una app que obtiene el porcentaje de rit
 > Para instalar la última versión estable de `npm` corré: `npm install -g npm`.
 > Agregá `sudo` al principio si te da problema de permisos al instalar en `Linux` o `Mac`.
 
-## Recomendable
+## 🍪 Recomendable
 * Conocimiento básico de `React`
 * Manejo básico de la `terminal`
 * Conocimiento básico de ES6 (arrow functions, destructuring, template literals, etc)
 
-## Materiales
+## 🛠 Materiales
 * 🔗 [Endpoint obtener ritmo y sustancia](https://wt-3581e5a0e6c19bb4a0552203b2738a9d-0.run.webtask.io/obtener-ritmosustancia)
 * 🕹 [Demo proyecto terminado](https://goncy.github.io/charla-fcc-react-styled-components-cypress)
 * 📻 [Código proyecto terminado](https://github.com/goncy/charla-fcc-react-styled-components-cypress/tree/master/proyecto)

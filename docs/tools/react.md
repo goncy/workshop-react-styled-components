@@ -17,12 +17,30 @@ Algunas de las diferencias que podemos encontrar a la hora de escribir `JSX` son
 > Tip: Si querés ver como se ve `JSX` ya transpilado a `JavasScript` o como deberías escribir `React` sin `JSX`, podes usar [este](https://jsx-live.now.sh/) live editor de [Belen Curcio](https://twitter.com/okbel)
 
 ## Escribiendo un componente de `React`
-`React` trae una clase integrada, llamada `Component`, que nos permite crear componentes para utilizar en nuestra aplicación, este sería un ejemplo de un componente contador con un botón de sumar y restar:
+Este sería un componente contador con un botón de sumar y restar:
 ```jsx
-import React, {useState} from "react" // Importamos React siempre que necesitemos usar JSX
+import React from "react" // Importamos React siempre que necesitemos usar JSX
 
 const ContadorDeSustancias = () => {
-  const [kilos, setKilos] = useState(0); // Usamos useState para definir un estado para nuestro componente, el primer valor dentro de los corchetes va a ser el `valor` de nuestro estado, el segundo valor va a ser una funcion `seter`, significa que va a actualizar el `valor` de nuestro estado con cualquier cosa que le pasemos
+  return (
+    <div>
+      <h1>Kilos de sustancia: 0</h1>
+      <button> - </button>
+      <button> + </button>
+    </div>
+  )
+}
+
+export default ContadorDeSustancias // Exportamos el componente para poder importarlo desde otros componentes
+```
+
+## State
+`React` trae un `hook` integrado, llamado `useState`, que nos permite agregar estado a nuestro componente, vamos a hacer andar los botones de sumar y restar de nuestro componente anterior y a mostrar el valor del contador en vez de 0:
+```jsx
+import React, {useState} from "react" // Importamos `useState` usando destructuring luego de importar React
+
+const ContadorDeSustancias = () => {
+  const [kilos, setKilos] = useState(0); // Usamos useState para definir un estado para nuestro componente, el primer valor dentro de los corchetes va a ser el `valor` de nuestro estado, el segundo valor va a ser una funcion `seter`, significa que va a actualizar el `valor` de nuestro estado con cualquier cosa que le pasemos, lo que pasemos entre los paréntesis de useState será el valor inicial
 
   return (
     <div>
@@ -33,14 +51,13 @@ const ContadorDeSustancias = () => {
   )
 }
 
-export default ContadorDeSustancias // Exportamos el componente para poder importarlo desde otros componentes
+export default ContadorDeSustancias
 ```
 
 Si renderizamos este componente obtendríamos esto:
 
 ![01](../../assets/react-counter.gif)
 
-## State
 Ves como siempre vemos actualizado el valor de `kilos`? Esto pasa por que cada vez que actualizamos el estado de nuestro componente (con `setKilos`), todo el componente vuelve a renderizarse con el estado nuevo.
 
 > Nota: Siempre que queramos actualizar el estado de nuestro componente debemos hacerlo con la funcion seter (`setKilos` en este caso) y no como `kilos = 2`, ya que si lo hacemos de la segunda manera, `React` no escucha el cambio y no vuelve a renderizar nuestro componente.
@@ -53,7 +70,7 @@ Vamos a usar nuestro `ContadorDeSustancias` y modificarlo para que reciba una pr
 ```jsx
 import React, {useState} from "react"
 
-const ContadorDeSustancias = ({sustancia = 'sustancia desconocida'}) => { /* Hacemos destructuring de una prop `sustancia` y le asignamos un valor por defecto en caso de no ser definida */
+const ContadorDeSustancias = ({sustancia = 'sustancia desconocida'}) => { /* Hacemos destructuring de una prop `sustancia` y le asignamos un valor por defecto en caso de no estar definida */
   const [kilos, setKilos] = useState(0);
 
   return (
