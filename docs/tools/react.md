@@ -56,7 +56,7 @@ export default ContadorDeSustancias
 
 Si renderizamos este componente obtendríamos esto:
 
-![01](../../assets/react-counter.gif)
+![01](../assets/react-counter.gif)
 
 Ves como siempre vemos actualizado el valor de `kilos`? Esto pasa por que cada vez que actualizamos el estado de nuestro componente (con `setKilos`), todo el componente vuelve a renderizarse con el estado nuevo.
 
@@ -93,7 +93,7 @@ Entonces ahora podríamos usar nuestro componente de la siguiente manera:
 
 Y se vería así:
 
-![02](../../assets/react-counter-prop.gif)
+![02](../assets/react-counter-prop.gif)
 
 > Gotcha: La diferencia entre `state` y `props` puede no entenderse muy bien al principio, solo recordá. Un componente puede cambiar su propio estado directamente, pero no el de sus `props`.
 

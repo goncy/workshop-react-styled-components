@@ -55,7 +55,7 @@ describe("Demo", () => {
 ```
 > Tip: Recordar que hay que tener la aplicación corriendo en `http://localhost:3000` sino el test no va a funcionar
 
-![01](../../assets/04-ritmosustanciometro-fail.png)
+![01](../assets/04-ritmosustanciometro-fail.png)
 
 Mmm, nuestro test falla, nos dice que no encuentra el elemento `[data-test='nombre']`. Eso es por que es verdad, ese elemento no existe (todavía), los elementos `data-test` se suelen utilizar para poder obtener los elementos deseados de una aplicación, desde los tests. Vamos a ir a nuestra aplicación y en `App.js` vamos a agregarle `[data-test='nombre']` a nuestro campo de texto `nombre`:
 ```jsx
@@ -65,7 +65,7 @@ Mmm, nuestro test falla, nos dice que no encuentra el elemento `[data-test='nomb
 ```
 Ahora vemos que nuestro test pasa!
 
-![02](../../assets/04-ritmosustanciometro-pass.gif)
+![02](../assets/04-ritmosustanciometro-pass.gif)
 
 ### Conclusión
 Tenemos nuestra aplicación creada, estilada y testeada, felicitaciones!

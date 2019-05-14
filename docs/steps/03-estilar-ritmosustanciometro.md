@@ -108,7 +108,7 @@ const Ritmosustanciometro = ({nombre, ritmosustancia}) => (
 export default Ritmosustanciometro;
 ```
 
-![01](../../assets/03-estilos-1.jpg)
+![01](../assets/03-estilos-1.jpg)
 
 ### Convertir a `Ritmosustanciometro.js` en una barra de carga
 Vamos a cambiar un poco la estructura del `Ritmosustanciometro` para que parezca una barra de carga marcando el nivel de `ritmosustancia`:
@@ -154,7 +154,7 @@ const Ritmosustanciometro = ({nombre, ritmosustancia}) => (
 export default Ritmosustanciometro;
 ```
 
-![02](../../assets/03-estilos-2.jpg)
+![02](../assets/03-estilos-2.jpg)
 
 Perfecto, `Styled Components` nos permitió usar el valor de `ritmosustancia` de `props` para cambiar el color y ancho de nuestra barra de nivel de `ritmosustancia`
 
@@ -237,7 +237,7 @@ const Ritmosustanciometro = ({nombre, ritmosustancia}) => (
 export default Ritmosustanciometro;
 ```
 
-![03](../../assets/03-estilos-3.gif)
+![03](../assets/03-estilos-3.gif)
 
 ### Conclusión
 Ya tenemos nuestro `ritmosustanciometro` con un poco mas de onda!, vamos a testearlo con `Cypress`

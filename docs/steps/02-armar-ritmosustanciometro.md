@@ -99,7 +99,7 @@ export default App;
 
 Nos va a quedar algo así:
 
-![01](../../assets/02-ritmosustanciometro-base.jpg)
+![01](../assets/02-ritmosustanciometro-base.jpg)
 
 ### Conectar el campo de `nombre` al state `nombre`
 Para eso vamos a crear una función en `App` llamada `actualizarNombre` que va a tomar un `evento` de `change` y va a usar el valor del campo en el que se llamó para actualizar el valor del `state` `nombre`. Vamos a ejecutarla en el `onChange` de nuestro campo `nombre` y a su vez, vamos a tomar el valor del `state` `nombre` y vamos a asignarlo al `value` del campo `nombre`:
