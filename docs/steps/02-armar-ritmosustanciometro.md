@@ -187,6 +187,8 @@ Ahora si, vamos a agregar una función `obtenerRitmosustancia` al componente `Ap
 import React, { useState } from 'react';
 import axios from 'axios';  // Importamos Axios
 
+import Ritmosustanciometro from "./Ritmosustanciometro";
+
 function App() {
   const [nombre, setNombre] = useState('');
   const [individuos, setIndividuos] = useState([{
