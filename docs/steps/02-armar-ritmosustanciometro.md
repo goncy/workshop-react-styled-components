@@ -12,11 +12,10 @@ Ahora que ya tenemos nuestra aplicación base vamos a:
 ### Borrar las cosas que no necesitamos del componente `App`
 Nosotros vamos a encargarnos tanto de la lógica como de los estilos de la aplicación, asi que vamos a borrar todos los archivos y cosas que no necesitamos:
 
-* Archivos: `App.css` y `logo.svg`
+* Archivos: `App.css`, `App.test.js` y `logo.svg`
 * Del archivo `App.js`:
   * Imports de `App.css` y `logo.svg`
   * Todo el contenido del render, vamos a dejar un `div` con un `h1` adentro que diga `Ritmosustanciometro`
-  * Convertimos el componente en un `functional component`
 
 Por lo tanto `App.js` nos quedaría asi:
 
@@ -24,11 +23,13 @@ Por lo tanto `App.js` nos quedaría asi:
 // App.js
 import React from 'react';
 
-const App = () => (
-  <div>
-    <h1>Ritmosustanciometro</h1>
-  </div>
-)
+function App() {
+  return (
+    <div>
+      <h1>Ritmosustanciometro</h1>
+    </div>
+  );
+}
 
 export default App;
 ```
@@ -55,13 +56,13 @@ Vamos a ir a `App.js` y vamos a agregar dos `state`, uno para el `nombre` de la 
 
 ```jsx
 // App.js
-import React, { useStae } from 'react';
+import React, { useState } from 'react';
 
-const App = () => {
+function App() {
   const [nombre, setNombre] = useState('');
   const [individuos, setIndividuos] = useState([]);
 
-return (
+  return (
     <div>
       <h1>Ritmosustanciometro</h1>
     </div>
@@ -78,7 +79,7 @@ Agregamos un nuevo `form` debajo de nuestro `h1` para meter nuestro campo de tex
 // App.js
 import React, { useState } from 'react';
 
-const App = () => {
+function App() {
   const [nombre, setNombre] = useState('');
   const [individuos, setIndividuos] = useState([]);
 
@@ -108,12 +109,12 @@ Para eso vamos a crear una función en `App` llamada `actualizarNombre` que va a
 // App.js
 import React, { useState } from 'react';
 
-const App = () => {
+function App() {
   const [nombre, setNombre] = useState('');
   const [individuos, setIndividuos] = useState([]);
 
   // Creamos una función `actualizarNombre`
-  function actualizarNombre = (event) => {
+  function actualizarNombre(event) {
     // Guardamos en `nombre` lo que escribimos en el campo, lo obtenemos de `event.target.value`
     setNombre(event.target.value)
   }
@@ -140,7 +141,9 @@ Vamos a importar nuestro componente `Ritmosustanciometro` y vamos a iterar usand
 // App.js
 import React, { useState } from 'react';
 
-const App = () => {
+import Ritmosustanciometro from './Ritmosustanciometro';
+
+function App() {
   const [nombre, setNombre] = useState('');
   const [individuos, setIndividuos] = useState([{
     nombre: 'goncy',
@@ -148,7 +151,7 @@ const App = () => {
   }]);
 
   // Creamos una función `actualizarNombre`
-  function actualizarNombre = (event) => {
+  function actualizarNombre(event) {
     // Guardamos en `nombre` lo que escribimos en el campo, lo obtenemos de `event.target.value`
     setNombre(event.target.value)
   }
@@ -189,7 +192,7 @@ const App = () => {
   }]);
 
   // Creamos una función `actualizarNombre`
-  function actualizarNombre = (event) => {
+  function actualizarNombre(event) {
     // Guardamos en `nombre` lo que escribimos en el campo, lo obtenemos de `event.target.value`
     setNombre(event.target.value)
   }
@@ -223,7 +226,8 @@ const App = () => {
           ritmosustancia={individuo.ritmosustancia}
         />
       )}
-      <form>
+      {/* Ejecutamos la funcion de `obtenerRitmosustancia` cuando hacemos submit del form */}
+      <form onSubmit={obtenerRitmosustancia}>
         <input type="text" onChange={actualizarNombre} value={nombre} />
         <button type="submit">Obtener ritmosustancia</button>
       </form>
