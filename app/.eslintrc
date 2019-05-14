@@ -1,0 +1,51 @@
+{
+  "root": true,
+  "extends": [
+    "react-app",
+    "plugin:prettier/recommended",
+    "plugin:cypress/recommended",
+    "prettier/react",
+    "prettier/flowtype"
+  ],
+  "plugins": ["cypress", "react-hooks"],
+  "env": {
+    "cypress/globals": true
+  },
+  "settings": {
+    "flowtype": {
+      "onlyFilesWithFlowAnnotation": true
+    },
+    "react": {
+      "version": "detect"
+    }
+  },
+  "rules": {
+    "no-console": "error",
+    "default-case": "off",
+    "no-unused-vars": [
+      "error",
+      {
+        "args": "after-used",
+        "ignoreRestSiblings": false,
+        "argsIgnorePattern": "^_$"
+      }
+    ],
+    "jsx-a11y/accessible-emoji": "off",
+    "prettier/prettier": [
+      "error",
+      {
+        "semi": true,
+        "singleQuote": true,
+        "trailingComma": "es5"
+      }
+    ],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "react/jsx-sort-props": ["error", {
+      "callbacksLast": true,
+      "shorthandFirst": true,
+      "noSortAlphabetically": false,
+      "reservedFirst": true
+    }]
+  }
+}
