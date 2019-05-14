@@ -205,7 +205,7 @@ function App() {
     event.preventDefault(); // Evitamos que la aplicación se recargue por el `submit` del `form`
 
     // Hacemos un fetch a nuestro `endpoint` para obtener un valor de `ritmosustancia`
-    const ritmosustancia = await axios.get("https://wt-3581e5a0e6c19bb4a0552203b2738a9d-0.run.webtask.io/obtener-ritmosustancia")
+    const ritmosustancia = await axios("https://wt-3581e5a0e6c19bb4a0552203b2738a9d-0.run.webtask.io/obtener-ritmosustancia").then(res => res.data)
 
     // Usando `concat` agregamos un nuevo individuo al `array` de `individuos` que ya tenemos en nuestro `state`, pasando el `nombre` de nuestro `state` y el valor de `ritmosustancia` que nos devolvió el servidor
     setIndividuos(
