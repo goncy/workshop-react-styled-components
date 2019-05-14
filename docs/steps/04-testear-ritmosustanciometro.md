@@ -32,24 +32,17 @@ npm run cypress:open
 ## Crear nuestro primer test
 Cuando queremos testear nuestra aplicación, muchas veces tenemos que hacer algo super tedioso que es encontrar una manera de resolver los pedidos que nuestra aplicación hace al servidor, ya sea por que no queremos spamear el server, no queremos llenar la base de datos de información de tests, etc. Por suerte `Cypress` tiene una muy buena solución a esto, vamos a crear un archivo `ritmosustanciometro.test.js` en la carpeta `cypress/integration` que se creó luego de correr el script  `cypress:open` por primera vez, dentro vamos a escribir:
 ```javascript
-describe("Demo", () => {
-  // Este hack es necesario por que Cypress no se lleva muy bien con el fetch nativo del browser, con suerte no lo vamos a necesitar en un futuro, básicamente reemplaza el fetch nativo por null para poder reemplazarlo con el fetch de cypress, esto va a servir para poder decidir que van a devolver nuestros calls http, si en tu aplicación no estas usando el fetch nativo del browser y estás usando request, axios, jQuery u otra alternativa, podes omitir el hook `before`
-  before(function() {
-    Cypress.on("window:before:load", win => {
-      win.fetch = null;
-    });
-  });
-
-  it("debería devolver el ritmo y sustancia que le digamos", () => {
+describe('Ritmosustanciometro', () => {
+  it('debería devolver el ritmo y sustancia que le digamos', () => {
     cy.server(); // Le decimos a Cypress que vamos a hacer uso de su server
-    cy.visit("http://localhost:3000/"); // Le decimos a Cypress que vaya al inicio de nuestra aplicación, en este caso suponemos que la aplicación esta corriendo en la URL `http://localhost:3000/`
+    cy.route('GET', '/obtener-ritmosustancia', 100); // Le decimos a Cypress que la próxima vez que nuestra aplicación haga un pedido a una url que termine con `obtener-ritmo-y-sustancia`, la respuesta siempre sea 100
 
-    cy.route("GET", "/obtener-ritmosustancia", 100); // Le decimos a Cypress que la próxima vez que nuestra aplicación haga un pedido a una url que termine con `obtener-ritmo-y-sustancia`, la respuesta siempre sea 100
+    cy.visit('http://localhost:3000/'); // Le decimos a Cypress que vaya al inicio de nuestra aplicación, en este caso suponemos que la aplicación esta corriendo en la URL `http://localhost:3000/`
 
     cy.get("[data-test='nombre']") // Obtenemos el campo de nombre
-      .type('fcc{enter}') // Escribimos fcc y forzamos un enter
+      .type('fcc{enter}'); // Escribimos fcc y forzamos un enter
 
-    cy.contains("fcc: 100"); // Esperamos que nuestra aplicación tenga "fcc: 100" impreso en alguna parte
+    cy.contains('fcc: 100'); // Esperamos que nuestra aplicación tenga "fcc: 100" impreso en alguna parte
   });
 });
 ```
@@ -64,6 +57,8 @@ Mmm, nuestro test falla, nos dice que no encuentra el elemento `[data-test='nomb
 ...
 ```
 Ahora vemos que nuestro test pasa!
+
+> Tip: Si bien usar atributos `data-test` es recomendable, no es necesario, se puede usar cualquier selector! (.clase, #id, etc)
 
 ![02](../assets/04-ritmosustanciometro-pass.gif)
 
