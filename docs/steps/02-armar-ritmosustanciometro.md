@@ -178,11 +178,14 @@ export default App;
 ```
 
 ### Implementar la funcionalidad de `obtener ritmosustancia`
-Agregar una función `obtenerRitmosustancia` al componente `App` que al hacer `submit` del `form`, se obtenga la `ritmosustancia` del servidor, se agregue a la lista de `individuos` y reinicie el valor `nombre` del `state`:
+Para implementar nuestra función `obtenerRitmosustancia` vamos a hacer un request a un servidor, para eso, vamos a usar una libreria llamada `axios`. Vamos a instalar `axios` yendo a la consola, asegurandonos de que estemos parados en la carpeta del proyecto y ejecutando `npm install axios --save`.
+
+Ahora si, vamos a agregar una función `obtenerRitmosustancia` al componente `App` que al hacer `submit` del `form`, obtenga la `ritmosustancia` del servidor, la agregue a la lista de `individuos` y reinicie el valor `nombre` del `state`:
 
 ```jsx
 // App.js
 import React, { useState } from 'react';
+import axios from 'axios';  // Importamos Axios
 
 function App() {
   const [nombre, setNombre] = useState('');
@@ -201,16 +204,14 @@ function App() {
   async function obtenerRitmosustancia(event) {
     event.preventDefault(); // Evitamos que la aplicación se recargue por el `submit` del `form`
 
-    // Hacemos un `fetch` a nuestro `endpoint` para obtener un valor de `ritmosustancia`
-    const request = await fetch("https://wt-3581e5a0e6c19bb4a0552203b2738a9d-0.run.webtask.io/obtener-ritmosustancia")
-    // Obtenemos el valor de la respuesta
-    const response = await request.json()
+    // Hacemos un fetch a nuestro `endpoint` para obtener un valor de `ritmosustancia`
+    const ritmosustancia = await axios.get("https://wt-3581e5a0e6c19bb4a0552203b2738a9d-0.run.webtask.io/obtener-ritmosustancia")
 
     // Usando `concat` agregamos un nuevo individuo al `array` de `individuos` que ya tenemos en nuestro `state`, pasando el `nombre` de nuestro `state` y el valor de `ritmosustancia` que nos devolvió el servidor
     setIndividuos(
       individuos.concat({
-        nombre: nombre,
-        ritmosustancia: response
+        nombre,
+        ritmosustancia
       })
     )
     setNombre(''); // Reiniciamos el valor de nombre
