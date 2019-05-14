@@ -184,7 +184,7 @@ Agregar una función `obtenerRitmosustancia` al componente `App` que al hacer `s
 // App.js
 import React, { useState } from 'react';
 
-const App = () => {
+function App() {
   const [nombre, setNombre] = useState('');
   const [individuos, setIndividuos] = useState([{
     nombre: 'goncy',

@@ -39,37 +39,56 @@ Vamos a ir a `App.js`. Vamos a importar `Styled Components`, crear un `Container
 import React, { useState } from 'react';
 import styled from "styled-components" // Importamos `Styled Components`
 
+import Ritmosustanciometro from './Ritmosustanciometro';
+
 // Creamos un container de `styled.div` con unos estilos básicos
 const Container = styled.div`
   width: 100%;
   max-width: 640px;
 `
 
-const App = () => {
+function App() {
   const [nombre, setNombre] = useState('');
-  const [individuos, setIndividuos] = useState([{
-    nombre: 'goncy',
-    ritmosustancia: 100
-  }]);
+  const [individuos, setIndividuos] = useState([
+    {
+      nombre: 'goncy',
+      ritmosustancia: 100,
+    },
+  ]);
 
-  // Creamos una función `actualizarNombre`
-  function actualizarNombre = (event) => {
-    // Guardamos en `nombre` lo que escribimos en el campo, lo obtenemos de `event.target.value`
-    setNombre(event.target.value)
+  function actualizarNombre(event) {
+    setNombre(event.target.value);
+  }
+
+  async function obtenerRitmosustancia(event) {
+    event.preventDefault();
+
+    const request = await fetch(
+      'https://wt-3581e5a0e6c19bb4a0552203b2738a9d-0.run.webtask.io/obtener-ritmosustancia'
+    );
+    const response = await request.json();
+
+    setIndividuos(
+      individuos.concat({
+        nombre: nombre,
+        ritmosustancia: response,
+      })
+    );
+    setNombre('');
   }
 
   return (
-    {/* Usamos `Container` como contenedor de nuestro componente `App` */}
+    {/* Usamos `Container` como contenedor de nuestra app */}
     <Container>
       <h1>Ritmosustanciometro</h1>
-      {individuos.map((individuo) =>
+      {individuos.map(individuo => (
         <Ritmosustanciometro
           nombre={individuo.nombre}
           ritmosustancia={individuo.ritmosustancia}
         />
-      )}
-      <form>
-        <input type="text" onChange={actualizarNombre} value={nombre} />
+      ))}
+      <form onSubmit={obtenerRitmosustancia}>
+        <input type="text" value={nombre} onChange={actualizarNombre} />
         <button type="submit">Obtener ritmosustancia</button>
       </form>
     </Container>
