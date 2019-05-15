@@ -64,9 +64,9 @@ function App() {
   async function obtenerRitmosustancia(event) {
     event.preventDefault();
 
-    const ritmosustancia = await axios.get(
+    const ritmosustancia = await axios(
       'https://wt-3581e5a0e6c19bb4a0552203b2738a9d-0.run.webtask.io/obtener-ritmosustancia'
-    );
+    ).then(res => res.data);
 
     setIndividuos(
       individuos.concat({
