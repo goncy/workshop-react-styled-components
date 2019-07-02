@@ -36,7 +36,7 @@ export default App;
 
 ### Crear un componente `Ritmosustanciometro`
 Vamos a crear un nuevo archivo `Ritmosustanciometro.js` dentro de `src` (al mismo nivel que `App.js`).
-Adentro vamos a crear un `functional component` llamado `Ritmosustanciometro` que va a recibir dos props, `nombre` y `ritmosustancia`, las cuales va a mostrar dentro de un `div`, nos quedaría algo así:
+Adentro vamos a crear un componente llamado `Ritmosustanciometro` que va a recibir dos props, `nombre` y `ritmosustancia`, las cuales va a mostrar dentro de un `div`. Nos quedaría algo así:
 
 ```jsx
 // Ritmosustanciometro.js

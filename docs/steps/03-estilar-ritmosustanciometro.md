@@ -161,8 +161,8 @@ const Container = styled.div`
   }
 `
 
+{/* Le pasamos el valor de `ritmosustancia` a nuestro container para poder usarlo en nuestros estilos */}
 const Ritmosustanciometro = ({nombre, ritmosustancia}) => (
-  {/* Le pasamos el valor de `ritmosustancia` a nuestro container para poder usarlo en nuestros estilos */}
   <Container ritmosustancia={ritmosustancia}>
     {/* Creamos un `div` para mostrar el `nombre` y el valor de `ritmosustancia` y otro para mostrar la barra de nivel de `ritmosustancia`, les asignamos las clases que definimos mas arriba */}
     <div className="cantidad">{nombre}: {ritmosustancia}</div>
@@ -241,6 +241,8 @@ const Container = styled.div`
     height: 100%;
     top: 0;
     left: 0;
+    background-color: hsl(${props => props.ritmosustancia}, 100%, 50%);
+    width: ${props => props.ritmosustancia}%;
     animation: ${(props) => carga(props.ritmosustancia)} 1s ease-in-out;
     animation-fill-mode: forwards;
   }
