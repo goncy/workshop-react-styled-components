@@ -21,7 +21,7 @@ Este sería un componente contador con un botón de sumar y restar:
 ```jsx
 import React from "react" // Importamos React siempre que necesitemos usar JSX
 
-const ContadorDeSustancias = () => {
+function ContadorDeSustancias() {
   return (
     <div>
       <h1>Kilos de sustancia: 0</h1>
@@ -39,7 +39,7 @@ export default ContadorDeSustancias // Exportamos el componente para poder impor
 ```jsx
 import React, {useState} from "react" // Importamos `useState` usando destructuring luego de importar React
 
-const ContadorDeSustancias = () => {
+function ContadorDeSustancias() {
   const [kilos, setKilos] = useState(0); // Usamos useState para definir un estado para nuestro componente, el primer valor dentro de los corchetes va a ser el `valor` de nuestro estado, el segundo valor va a ser una funcion `seter`, significa que va a actualizar el `valor` de nuestro estado con cualquier cosa que le pasemos, lo que pasemos entre los paréntesis de useState será el valor inicial
 
   return (
@@ -70,7 +70,7 @@ Vamos a usar nuestro `ContadorDeSustancias` y modificarlo para que reciba una pr
 ```jsx
 import React, {useState} from "react"
 
-const ContadorDeSustancias = ({sustancia = 'sustancia desconocida'}) => { /* Hacemos destructuring de una prop `sustancia` y le asignamos un valor por defecto en caso de no estar definida */
+function ContadorDeSustancias({sustancia = 'sustancia desconocida'}) { /* Hacemos destructuring de una prop `sustancia` y le asignamos un valor por defecto en caso de no estar definida */
   const [kilos, setKilos] = useState(0);
 
   return (

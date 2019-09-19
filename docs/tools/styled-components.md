@@ -64,12 +64,14 @@ const Container = styled.div`
   }
 `
 
-const Inicio = () => (
-  <Container>
-    <h1 className="titulo">Inicio</h1>
-    <div>Contenido</div>
-  </Container>
-)
+function Inicio() {
+  return (
+    <Container>
+      <h1 className="titulo">Inicio</h1>
+      <div>Contenido</div>
+    </Container>
+  )
+}
 
 export default Inicio
 ```
@@ -151,7 +153,7 @@ Esto va a hacer que el elemento tarde 10 segundos en rotar 360 grados, pero al h
 ![02](../assets/styled-rotation.gif)
 
 ## Estilos globales
-Si queremos agregar estilos globales podemos usar la función `injectGlobal` de `Styled Components`, podemos crear un archivo aparte o simplemente ejecutarla en nuestro archivo `index.js`, `App.js` o cualquier archivo que se ejecute en nuestra aplicación. Se haría asi:
+Si queremos agregar estilos globales podemos usar la función `injectGlobal` de `Styled Components`, podemos crear un archivo aparte o simplemente ejecutarla en nuestro archivo `index.js`. Se haría asi:
 ```javascript
 import { injectGlobal } from 'styled-components'
 
@@ -185,4 +187,4 @@ Hay muchas cosas copadas que todavía no vimos, pero ya vimos suficiente y no qu
 ## Conclusión
 Todavía queda mucho por aprender de `Styled Components`, pero con esto ya estamos listos para darle estilos a nuestro ritmosustanciometro ⚗️
 
-[⏪ React](./react.md) | [Cypress ⏩](./cypress.md)
+[⏪ React](./react.md)

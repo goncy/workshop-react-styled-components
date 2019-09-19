@@ -1,13 +1,12 @@
 # Estilando el `ritmosustanciometro`
 Para empezar a estilar nuestro `ritmosustanciometro` vamos a:
 
-1. Agregar `Styled Components` a nuestro proyecto
-2. Definir estilos globales para nuestra aplicación
-3. Crear un `Container` de estilos para `App.js`
-4. Crear un `Container` de estilos para `Ritmosustanciometro.js`
-5. Convertir a `Ritmosustanciometro.js` en una barra de carga
-6. Crear animaciones de aparición y de carga
-7. Aplicar las animaciones a `Ritmosustanciometro.js`
+1. Definir estilos globales para nuestra aplicación
+2. Crear un `Container` de estilos para `index.js`
+3. Crear un `Container` de estilos para `Ritmosustanciometro.js`
+4. Convertir a `Ritmosustanciometro.js` en una barra de carga
+5. Crear animaciones de aparición y de carga
+6. Aplicar las animaciones a `Ritmosustanciometro.js`
 
 ### Agregar `Styled Components` a nuestro proyecto
 Vamos a volver a la terminal, nos paramos en la carpeta `ritmosustanciometro` y ejecutamos:
@@ -31,12 +30,13 @@ html, body, #root {
 ```
 Con esto simplemente nos vamos a asegurar de que nuestra aplicación ocupe el espacio que necesita, se centre y que tenga una font un poco mas respetable
 
-### Crear un `Container` de estilos para `App.js`
-Vamos a ir a `App.js`. Vamos a importar `Styled Components`, crear un `Container` de `styled.div` con unos estilos básicos y vamos a usarlo como contenedor de nuestro componente `App`:
+### Crear un `Container` de estilos para `index.js`
+Vamos a ir a `index.js`. Vamos a importar `Styled Components`, crear un `Container` de `styled.div` con unos estilos básicos y vamos a usarlo como contenedor de nuestro componente `App`:
 
 ```jsx
-// App.js
+// index.js
 import React, { useState } from 'react';
+import ReactDOM from 'react-dom';
 import axios from 'axios';
 import styled from "styled-components" // Importamos `Styled Components`
 
@@ -64,9 +64,7 @@ function App() {
   async function obtenerRitmosustancia(event) {
     event.preventDefault();
 
-    const ritmosustancia = await axios(
-      'https://wt-3581e5a0e6c19bb4a0552203b2738a9d-0.run.webtask.io/obtener-ritmosustancia'
-    ).then(res => res.data);
+    const ritmosustancia = await axios('https://xb8ek.sse.codesandbox.io/').then(res => res.data);
 
     setIndividuos(
       individuos.concat({
@@ -95,7 +93,8 @@ function App() {
   );
 }
 
-export default App;
+const rootElement = document.getElementById("root");
+ReactDOM.render(<App />, rootElement);
 ```
 
 ### Crear un `Container` de estilos para `Ritmosustanciometro.js`
@@ -118,11 +117,13 @@ const Container = styled.div`
 `
 
 // Usamos `Container` como contenedor de nuestro componente `Ritmosustanciometro`
-const Ritmosustanciometro = ({nombre, ritmosustancia}) => (
-  <Container>
-    {nombre}: {ritmosustancia}
-  </Container>
-);
+function Ritmosustanciometro({nombre, ritmosustancia}) {
+  return (
+    <Container>
+      {nombre}: {ritmosustancia}
+    </Container>
+  );
+}
 
 export default Ritmosustanciometro;
 ```
@@ -162,13 +163,15 @@ const Container = styled.div`
 `
 
 {/* Le pasamos el valor de `ritmosustancia` a nuestro container para poder usarlo en nuestros estilos */}
-const Ritmosustanciometro = ({nombre, ritmosustancia}) => (
-  <Container ritmosustancia={ritmosustancia}>
-    {/* Creamos un `div` para mostrar el `nombre` y el valor de `ritmosustancia` y otro para mostrar la barra de nivel de `ritmosustancia`, les asignamos las clases que definimos mas arriba */}
-    <div className="cantidad">{nombre}: {ritmosustancia}</div>
-    <div className="barra" />
-  </Container>
-);
+function Ritmosustanciometro({nombre, ritmosustancia}) {
+  return (
+    <Container ritmosustancia={ritmosustancia}>
+      {/* Creamos un `div` para mostrar el `nombre` y el valor de `ritmosustancia` y otro para mostrar la barra de nivel de `ritmosustancia`, les asignamos las clases que definimos mas arriba */}
+      <div className="cantidad">{nombre}: {ritmosustancia}</div>
+      <div className="barra" />
+    </Container>
+  );
+}
 
 export default Ritmosustanciometro;
 ```
@@ -261,7 +264,7 @@ export default Ritmosustanciometro;
 ![03](../assets/03-estilos-3.gif)
 
 ### Conclusión
-Ya tenemos nuestro `ritmosustanciometro` con un poco mas de onda!, vamos a testearlo con `Cypress`
+Ya tenemos nuestro `ritmosustanciometro` con un poco mas de onda!
 
 
-[⏪ Armando el `ritmosustanciometro`](./02-armar-ritmosustanciometro.md) | [Testeando el `ritmosustanciometro` ⏩](./04-testear-ritmosustanciometro.md)
+[⏪ Armando el `ritmosustanciometro`](./01-armar-ritmosustanciometro.md)
