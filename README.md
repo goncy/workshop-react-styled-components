@@ -17,7 +17,7 @@ Vamos a armar el `ritmosustanciometro`, una aplicación que obtiene el porcentaj
 * Conocimiento básico de ES6 (arrow functions, destructuring, template literals, etc)
 
 ## 🛠 Materiales
-* 🧩 [Proyecto inicial](https://codesandbox.io/s/cliente-ritmosustanciometro-n61hr)
+* 🎟 [Proyecto inicial](https://codesandbox.io/s/cliente-ritmosustanciometro-n61hr)
 * 🔗 [Endpoint obtener ritmo y sustancia](https://xb8ek.sse.codesandbox.io/)
 * 🎬 [Slides](https://docs.google.com/presentation/d/1yjr1FHrym7gfBtVy7TFQb8wvH2Akqu_1xZYxi2H_CCM/edit?usp=sharing)
 
