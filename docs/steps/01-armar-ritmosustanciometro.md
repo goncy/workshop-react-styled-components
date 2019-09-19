@@ -1,5 +1,6 @@
 # Armando el `ritmosustanciometro`
-Vamos a abrir el [proyecto inicial](https://codesandbox.io/s/cliente-ritmosustanciometro-n61hr) y vamos a tocar en `Fork` (arriba a la derecha), si no tenemos cuenta de `codesandbox` nos hacemos una, esto nos va a permitir poder guardar nuestro proyecto online y editarlo o ejecutarlo desde cualquier lado.
+Vamos a abrir el [proyecto inicial](https://codesandbox.io/s/cliente-ritmosustanciometro-n61hr) y vamos a tocar en `Fork` (arriba a la derecha).
+Si no tenemos cuenta de `codesandbox` nos hacemos una, esto nos va a permitir poder guardar nuestro proyecto online y editarlo o ejecutarlo desde cualquier lado.
 Este proyecto inicial es una aplicación base creada usando el template de `create-react-app` y tiene instaladas las dependencias que vamos a usar a lo largo del workshop.
 
 Ahora que ya tenemos nuestra aplicación funcionando vamos a:
