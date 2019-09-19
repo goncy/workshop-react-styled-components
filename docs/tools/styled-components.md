@@ -122,7 +122,7 @@ const Texto = styled.div`
 
 > Tip: Usando `template strings` (los backticks), podés meter código `JavaScript` usando `${}`, por ejemplo:
 ```javascript
-`La sentido de la vida es ${40 + 2}` // El sentido de la vida es 42
+`El sentido de la vida es ${40 + 2}` // El sentido de la vida es 42
 ```
 
 ## Animaciones
