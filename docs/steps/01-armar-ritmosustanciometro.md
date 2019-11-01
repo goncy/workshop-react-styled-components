@@ -39,6 +39,8 @@ Vamos a ir a `index.js` y vamos a agregar dos `state`, uno para el `nombre` de l
 import React, { useState } from 'react'; // Importamos `useState`
 import ReactDOM from "react-dom";
 
+import "./styles.css";
+
 function App() {
   const [nombre, setNombre] = useState('');
   const [individuos, setIndividuos] = useState([]);
@@ -61,6 +63,8 @@ Agregamos un nuevo `form` debajo de nuestro `h1` para meter nuestro campo de tex
 // index.js
 import React, { useState } from 'react';
 import ReactDOM from "react-dom";
+
+import "./styles.css";
 
 function App() {
   const [nombre, setNombre] = useState('');
@@ -92,6 +96,8 @@ Para eso vamos a crear una función en `App` llamada `actualizarNombre` que va a
 // index.js
 import React, { useState } from 'react';
 import ReactDOM from "react-dom";
+
+import "./styles.css";
 
 function App() {
   const [nombre, setNombre] = useState('');
@@ -127,6 +133,8 @@ import React, { useState } from 'react';
 import ReactDOM from "react-dom";
 
 import Ritmosustanciometro from './Ritmosustanciometro';
+
+import "./styles.css";
 
 function App() {
   const [nombre, setNombre] = useState('');
@@ -176,6 +184,8 @@ import axios from 'axios';  // Importamos Axios
 
 import Ritmosustanciometro from './Ritmosustanciometro';
 
+import "./styles.css";
+
 function App() {
   const [nombre, setNombre] = useState('');
   const [individuos, setIndividuos] = useState([{
@@ -194,7 +204,7 @@ function App() {
     event.preventDefault(); // Evitamos que la aplicación se recargue por el `submit` del `form`
 
     // Hacemos un fetch a nuestro `endpoint` para obtener un valor de `ritmosustancia`
-    const ritmosustancia = await axios("https://xb8ek.sse.codesandbox.io/").then(res => res.data)
+    const ritmosustancia = await axios("https://wt-3581e5a0e6c19bb4a0552203b2738a9d-0.run.webtask.io/obtener-ritmosustancia/").then(res => res.data)
 
     // Usando `concat` agregamos un nuevo individuo al `array` de `individuos` que ya tenemos en nuestro `state`, pasando el `nombre` de nuestro `state` y el valor de `ritmosustancia` que nos devolvió el servidor
     setIndividuos(

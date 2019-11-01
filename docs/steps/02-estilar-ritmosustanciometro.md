@@ -1,27 +1,11 @@
 # Estilando el `ritmosustanciometro`
 Para empezar a estilar nuestro `ritmosustanciometro` vamos a:
 
-1. Definir estilos globales para nuestra aplicación
-2. Crear un `Contenedor` de estilos para `index.js`
-3. Crear un `Contenedor` de estilos para `Ritmosustanciometro.js`
-4. Convertir a `Ritmosustanciometro.js` en una barra de carga
-5. Crear animaciones de aparición y de carga
-6. Aplicar las animaciones a `Ritmosustanciometro.js`
-
-### Definir estilos globales para nuestra aplicación
-Vamos a ir al archivo `index.css` y vamos a pegar lo siguiente:
-```css
-html, body, #root {
-  font-family: sans-serif;
-  justify-content: center;
-  text-align: center;
-  display: flex;
-  flex: 1;
-  margin: 0;
-  padding: 0;
-}
-```
-Con esto simplemente nos vamos a asegurar de que nuestra aplicación ocupe el espacio que necesita, se centre y que tenga una font un poco mas respetable
+1. Crear un `Contenedor` de estilos para `index.js`
+2. Crear un `Contenedor` de estilos para `Ritmosustanciometro.js`
+3. Convertir a `Ritmosustanciometro.js` en una barra de carga
+4. Crear animaciones de aparición y de carga
+5. Aplicar las animaciones a `Ritmosustanciometro.js`
 
 ### Crear un `Contenedor` de estilos para `index.js`
 Vamos a ir a `index.js`. Vamos a importar `Styled Components`, crear un `Contenedor` de `styled.div` con unos estilos básicos y vamos a usarlo como contenedor de nuestro componente `App`:
@@ -34,6 +18,8 @@ import axios from 'axios';
 import styled from "styled-components" // Importamos `Styled Components`
 
 import Ritmosustanciometro from './Ritmosustanciometro';
+
+import "./styles.css";
 
 // Creamos un container de `styled.div` con unos estilos básicos
 const Contenedor = styled.div`
@@ -57,7 +43,7 @@ function App() {
   async function obtenerRitmosustancia(event) {
     event.preventDefault();
 
-    const ritmosustancia = await axios('https://xb8ek.sse.codesandbox.io/').then(res => res.data);
+    const ritmosustancia = await axios('https://wt-3581e5a0e6c19bb4a0552203b2738a9d-0.run.webtask.io/obtener-ritmosustancia/').then(res => res.data);
 
     setIndividuos(
       individuos.concat({
@@ -68,8 +54,8 @@ function App() {
     setNombre('');
   }
 
+  // Usamos `Contenedor` como contenedor de nuestra app
   return (
-    {/* Usamos `Contenedor` como contenedor de nuestra app */}
     <Contenedor>
       <h1>Ritmosustanciometro</h1>
       {individuos.map(individuo => (
@@ -155,7 +141,7 @@ const Contenedor = styled.div`
   }
 `
 
-{/* Le pasamos el valor de `ritmosustancia` a nuestro container para poder usarlo en nuestros estilos */}
+// Le pasamos el valor de `ritmosustancia` a nuestro container para poder usarlo en nuestros estilos
 function Ritmosustanciometro({nombre, ritmosustancia}) {
   return (
     <Contenedor ritmosustancia={ritmosustancia}>

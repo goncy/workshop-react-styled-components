@@ -17,7 +17,7 @@ El `ritmosustanciometro`, una aplicación que obtiene el porcentaje de ritmo y s
 
 ## 🛠 Materiales
 * 🎟 [Proyecto inicial](https://codesandbox.io/s/cliente-ritmosustanciometro-n61hr)
-* 🔗 [Endpoint obtener ritmo y sustancia](https://xb8ek.sse.codesandbox.io/)
+* 🔗 [Endpoint obtener ritmo y sustancia](https://wt-3581e5a0e6c19bb4a0552203b2738a9d-0.run.webtask.io/obtener-ritmosustancia/)
 * 🎬 [Slides](https://docs.google.com/presentation/d/1LtpsEyeeFJA-MUaAnACV1H_W9Dr0K6EXSgXF0i9xQyo/edit#slide=id.g37ccca1cd0_0_16)
 
 ## 📚 Introducción
@@ -35,7 +35,7 @@ Ahora es tu turno, usa `React` y `Styled Components` para crear tu propio `ritmo
 * Deshabilitar el botón de `obtener ritmosustancia` mientras se está haciendo el pedido al servidor
 * Estilar el `ritmosustanciometro`
 * Agregar un botón para eliminar todos los resultados de `ritmosustancia`
-* Pasar los estilos de `index.css` a un componente con `createGlobalStyles` de `Styled Components`
+* Pasar los estilos de `styles.css` a un componente con `createGlobalStyles` de `Styled Components`
 
 ## 🤷‍♂️ Y ahora que?
 Ahora sabes un poco de muchas cosas, convertí lo poco en mucho y hace mucho con poco!, we, re filosofo el goncy, *Japish*👋. Tomá en cuenta algo, acabás de ver muchas cosas nuevas, cada una tiene su complejidad, no esperes saber todo ya ni te desmotives si no sale a la primera, después de todo, nadie nace sabiendo hacer un fernet, o codear en React. Asi que no te olvides, en el [Slack de freeCodeCampBA](https://freecodecampba.org/chat/), estamos para ayudar y contestar dudas siempre.
