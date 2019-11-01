@@ -6,7 +6,7 @@
 * Permite tener componentes más descriptivos
 
 ## Como se usa `Styled Components`?
-Al no tener configuración, es muy fácil de usar, como su nombre lo dice son componentes con estilos, por lo tanto lo primero que debemos hacer es importarlos asi:
+Al no tener configuración, es muy fácil de usar, lo primero que debemos hacer es importarlo:
 ```jsx
 import styled from "styled-components"
 ```
@@ -38,7 +38,7 @@ Luego podríamos importar estos componentes donde necesitemos y usarlos asi:
 ![01](../assets/styled-1.jpg)
 
 ## Conviene usarlo como contenedor o crear componentes reutilizables siempre?
-Es algo que siempre me pregunté y decidí no seguir un patron para esto, simplemente usar lo que sea necesario para el caso. Por lo tanto, podríamos tener un componente como `components/Tarjeta.js` que sea:
+Podemos usar ambos, si el componente lo vamos a reutilizar lo creamos en un archivo aparte, sino dentro del componente:
 ```jsx
 import styled from "styled-components"
 
@@ -51,7 +51,6 @@ const Tarjetilla = styled.div`
 
 export default Tarjetilla
 ```
-O usarlo dentro de nuestros componentes, por ejemplo que `components/Inicio.js` sea:
 ```jsx
 import React from "react"
 import styled from "styled-components"
@@ -77,8 +76,7 @@ export default Inicio
 ```
 
 ## Cuales son los beneficios (a nivel funcionalidad) que nos da `Styled Components` frente a `CSS`?
-- Clases, pseudo-elementos, etc, nesteados:
-
+Clases, pseudo-elementos, etc, nesteados:
 `CSS`
 ```css
 .articulo {
@@ -110,8 +108,7 @@ styled.div`
 }`
 ```
 
-- Uso de props o javascript en los estilos
-
+Uso de props o javascript en los estilos:
 ```jsx
 const Texto = styled.div`
   font-size: ${(props) => props.tamaño}px;
