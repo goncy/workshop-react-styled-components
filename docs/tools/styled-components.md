@@ -56,7 +56,7 @@ O usarlo dentro de nuestros componentes, por ejemplo que `components/Inicio.js` 
 import React from "react"
 import styled from "styled-components"
 
-const Container = styled.div`
+const Contenedor = styled.div`
   padding: 12px;
 
   .titulo {
@@ -66,10 +66,10 @@ const Container = styled.div`
 
 function Inicio() {
   return (
-    <Container>
+    <Contenedor>
       <h1 className="titulo">Inicio</h1>
       <div>Contenido</div>
-    </Container>
+    </Contenedor>
   )
 }
 
@@ -153,18 +153,21 @@ Esto va a hacer que el elemento tarde 10 segundos en rotar 360 grados, pero al h
 ![02](../assets/styled-rotation.gif)
 
 ## Estilos globales
-Si queremos agregar estilos globales podemos usar la función `injectGlobal` de `Styled Components`, podemos crear un archivo aparte o simplemente ejecutarla en nuestro archivo `index.js`. Se haría asi:
+Si queremos agregar estilos globales podemos crear un componente usando la función `createGlobalStyles` de `Styled Components`:
 ```javascript
-import { injectGlobal } from 'styled-components'
+import { createGlobalStyles } from 'styled-components'
 
-injectGlobal`
+const EstilosGlobales = createGlobalStyles`
   body {
     padding: 0;
     margin: 0;
     font-family: sans-serif;
   }
 `
+
+export default EstilosGlobales
 ```
+Cuando usemos este componente en algun lugar, los estilos se aplican en toda la aplicación.
 
 ## Que sería tener componentes mas descriptivos?
 Imagina que creamos un componente de `Styled Components` por cada componente dentro de nuestro componente?, en cierto punto llegariamos a tener algo asi:

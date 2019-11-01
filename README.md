@@ -1,10 +1,10 @@
-# De cero a tested en dos japish👋 con `React` y `Styled Components`
+# Metiendo ritmo y sustancia en dos japish👋 con `React` y `Styled Components`
 > `React` es una librería para crear interfaces de usuario, la vamos a usar para manejar las vistas y lógica de nuestra aplicación.
 
-> Usar solamente el `CSS` que soportan los navegadores hace que nuestros estilos sean verbosos, limitados o complicados de mantener en una aplicación grande. Por eso vamos a usar `Styled Components` para mejorar esa experiencia.
+> Usar solamente el `CSS` que soportan los navegadores hace que nuestros estilos sean verbosos, limitados o complicados de mantener en una aplicación grande. Vamos a usar `Styled Components` para mejorar esa experiencia.
 
 ## ❓ Qué vamos a hacer?
-Vamos a armar el `ritmosustanciometro`, una aplicación que obtiene el porcentaje de ritmo y sustancia de un individuo en tiempo real.
+El `ritmosustanciometro`, una aplicación que obtiene el porcentaje de ritmo y sustancia de un individuo en tiempo real.
 
 ![01](./docs/assets/00-ritmosustanciometro.gif)
 
@@ -36,7 +36,7 @@ Ahora es tu turno, usa `React` y `Styled Components` para crear tu propio `ritmo
 * Deshabilitar el botón de `obtener ritmosustancia` mientras se está haciendo el pedido al servidor
 * Estilar el `ritmosustanciometro`
 * Agregar un botón para eliminar todos los resultados de `ritmosustancia`
-* Pasar los estilos de `index.css` a `injectGlobal` de `Styled Components`
+* Pasar los estilos de `index.css` a un componente con `createGlobalStyles` de `Styled Components`
 
 ## 🤷‍♂️ Y ahora que?
 Ahora sabes un poco de muchas cosas, convertí lo poco en mucho y hace mucho con poco!, we, re filosofo el goncy, *Japish*👋. Tomá en cuenta algo, acabás de ver muchas cosas nuevas, cada una tiene su complejidad, no esperes saber todo ya ni te desmotives si no sale a la primera, después de todo, nadie nace sabiendo hacer un fernet, o codear en React. Asi que no te olvides, en el [Slack de freeCodeCampBA](https://freecodecampba.org/chat/), estamos para ayudar y contestar dudas siempre.

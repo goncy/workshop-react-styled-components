@@ -2,18 +2,11 @@
 Para empezar a estilar nuestro `ritmosustanciometro` vamos a:
 
 1. Definir estilos globales para nuestra aplicación
-2. Crear un `Container` de estilos para `index.js`
-3. Crear un `Container` de estilos para `Ritmosustanciometro.js`
+2. Crear un `Contenedor` de estilos para `index.js`
+3. Crear un `Contenedor` de estilos para `Ritmosustanciometro.js`
 4. Convertir a `Ritmosustanciometro.js` en una barra de carga
 5. Crear animaciones de aparición y de carga
 6. Aplicar las animaciones a `Ritmosustanciometro.js`
-
-### Agregar `Styled Components` a nuestro proyecto
-Vamos a volver a la terminal, nos paramos en la carpeta `ritmosustanciometro` y ejecutamos:
-```bash
-npm install styled-components --save
-```
-Esperamos que termine de instalar y listo!
 
 ### Definir estilos globales para nuestra aplicación
 Vamos a ir al archivo `index.css` y vamos a pegar lo siguiente:
@@ -30,8 +23,8 @@ html, body, #root {
 ```
 Con esto simplemente nos vamos a asegurar de que nuestra aplicación ocupe el espacio que necesita, se centre y que tenga una font un poco mas respetable
 
-### Crear un `Container` de estilos para `index.js`
-Vamos a ir a `index.js`. Vamos a importar `Styled Components`, crear un `Container` de `styled.div` con unos estilos básicos y vamos a usarlo como contenedor de nuestro componente `App`:
+### Crear un `Contenedor` de estilos para `index.js`
+Vamos a ir a `index.js`. Vamos a importar `Styled Components`, crear un `Contenedor` de `styled.div` con unos estilos básicos y vamos a usarlo como contenedor de nuestro componente `App`:
 
 ```jsx
 // index.js
@@ -43,7 +36,7 @@ import styled from "styled-components" // Importamos `Styled Components`
 import Ritmosustanciometro from './Ritmosustanciometro';
 
 // Creamos un container de `styled.div` con unos estilos básicos
-const Container = styled.div`
+const Contenedor = styled.div`
   width: 100%;
   max-width: 640px;
 `
@@ -76,8 +69,8 @@ function App() {
   }
 
   return (
-    {/* Usamos `Container` como contenedor de nuestra app */}
-    <Container>
+    {/* Usamos `Contenedor` como contenedor de nuestra app */}
+    <Contenedor>
       <h1>Ritmosustanciometro</h1>
       {individuos.map(individuo => (
         <Ritmosustanciometro
@@ -89,7 +82,7 @@ function App() {
         <input type="text" value={nombre} onChange={actualizarNombre} />
         <button type="submit">Obtener ritmosustancia</button>
       </form>
-    </Container>
+    </Contenedor>
   );
 }
 
@@ -97,7 +90,7 @@ const rootElement = document.getElementById("root");
 ReactDOM.render(<App />, rootElement);
 ```
 
-### Crear un `Container` de estilos para `Ritmosustanciometro.js`
+### Crear un `Contenedor` de estilos para `Ritmosustanciometro.js`
 Vamos a hacer lo mismo que en nuestro componente `App`:
 
 ```jsx
@@ -106,7 +99,7 @@ import React from "react";
 import styled from "styled-components"; // Importamos `Styled Components`
 
 // Creamos un container de `styled.div` con unos estilos básicos, ancho, alto, margen, borde y alineamos el contenido al centro
-const Container = styled.div`
+const Contenedor = styled.div`
   width: 100%;
   height: 36px;
   margin: 6px 0;
@@ -116,12 +109,12 @@ const Container = styled.div`
   border: 1px solid gainsboro;
 `
 
-// Usamos `Container` como contenedor de nuestro componente `Ritmosustanciometro`
+// Usamos `Contenedor` como contenedor de nuestro componente `Ritmosustanciometro`
 function Ritmosustanciometro({nombre, ritmosustancia}) {
   return (
-    <Container>
+    <Contenedor>
       {nombre}: {ritmosustancia}
-    </Container>
+    </Contenedor>
   );
 }
 
@@ -138,7 +131,7 @@ Vamos a cambiar un poco la estructura del `Ritmosustanciometro` para que parezca
 import React from "react";
 import styled from "styled-components";
 
-const Container = styled.div`
+const Contenedor = styled.div`
   width: 100%;
   height: 36px;
   margin: 6px 0;
@@ -165,11 +158,11 @@ const Container = styled.div`
 {/* Le pasamos el valor de `ritmosustancia` a nuestro container para poder usarlo en nuestros estilos */}
 function Ritmosustanciometro({nombre, ritmosustancia}) {
   return (
-    <Container ritmosustancia={ritmosustancia}>
+    <Contenedor ritmosustancia={ritmosustancia}>
       {/* Creamos un `div` para mostrar el `nombre` y el valor de `ritmosustancia` y otro para mostrar la barra de nivel de `ritmosustancia`, les asignamos las clases que definimos mas arriba */}
       <div className="cantidad">{nombre}: {ritmosustancia}</div>
       <div className="barra" />
-    </Container>
+    </Contenedor>
   );
 }
 
@@ -224,7 +217,7 @@ import styled from "styled-components";
 
 import {carga, aparecerDeAbajo} from "./animaciones" // Importamos las animaciones
 
-const Container = styled.div`
+const Contenedor = styled.div`
   width: 100%;
   height: 36px;
   margin: 6px 0;
@@ -252,10 +245,10 @@ const Container = styled.div`
 `
 
 const Ritmosustanciometro = ({nombre, ritmosustancia}) => (
-  <Container ritmosustancia={ritmosustancia}>
+  <Contenedor ritmosustancia={ritmosustancia}>
     <div className="cantidad">{nombre}: {ritmosustancia}</div>
     <div className="barra" />
-  </Container>
+  </Contenedor>
 );
 
 export default Ritmosustanciometro;
