@@ -63,7 +63,7 @@ Ves como siempre vemos actualizado el valor de `kilos`? Esto pasa por que cada v
 > Nota: Siempre que queramos actualizar el estado de nuestro componente debemos hacerlo con la funcion seter (`setKilos` en este caso) y no como `kilos = 2`, ya que si lo hacemos de la segunda manera, `React` no escucha el cambio y no vuelve a renderizar nuestro componente.
 
 ## Props
-Las props son la manera de pasar parámetros a un componente, al igual que el `state`, si las `props` cambian, nuestro componente se vuelve a renderizar.
+Las `props` son la manera de pasar parámetros a un componente, al igual que el `state`, si las `props` cambian, nuestro componente se vuelve a renderizar.
 Dijimos que los componentes deberían ser reutilizables, bueno, si no podrían recibir información externa no siempre serían útiles.
 Vamos a usar nuestro `ContadorDeSustancias` y modificarlo para que reciba una prop `sustancia`.
 
@@ -95,7 +95,7 @@ Y se vería así:
 
 ![02](../assets/react-counter-prop.gif)
 
-> Gotcha: La diferencia entre `state` y `props` puede no entenderse muy bien al principio, solo recordá. Un componente puede cambiar su propio estado directamente, pero no el de sus `props`.
+> Gotcha: La diferencia entre `state` y `props` puede no entenderse muy bien al principio, solo recordá. Un componente puede cambiar su `state` directamente, pero no sus `props`.
 
 ## Extras que no vamos a ver en este curso
 * [Redux](https://redux.js.org/), una librería para manejar el estado de nuestra aplicación `React`, podés ver [este curso](https://egghead.io/courses/getting-started-with-redux) que lo da su creador, Dan Abramov
