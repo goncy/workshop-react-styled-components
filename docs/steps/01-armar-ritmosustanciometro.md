@@ -232,4 +232,4 @@ ReactDOM.render(<App />, rootElement);
 ## Conclusión
 Felicitaciones!, ya tenés el `ritmosustanciometro` andando, tiene mucho `ritmo` pero le falta `sustancia`. Vamos a darsela con `Styled Components`
 
-[Estilando el `ritmosustanciometro` ⏩](./02-estilar-ritmosustanciometro.md)
+[⏪ Styled Components](../tools/styled-components.md) | [Estilando el `ritmosustanciometro` ⏩](./02-estilar-ritmosustanciometro.md)

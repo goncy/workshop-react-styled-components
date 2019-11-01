@@ -260,4 +260,4 @@ export default Ritmosustanciometro;
 Ya tenemos nuestro `ritmosustanciometro` con un poco mas de onda!
 
 
-[⏪ Armando el `ritmosustanciometro`](./01-armar-ritmosustanciometro.md)
+[⏪ Armando el `ritmosustanciometro`](./01-armar-ritmosustanciometro.md) | [Inicio ⏩](../../README.md)
