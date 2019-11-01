@@ -18,7 +18,7 @@ El `ritmosustanciometro`, una aplicación que obtiene el porcentaje de ritmo y s
 ## 🛠 Materiales
 * 🎟 [Proyecto inicial](https://codesandbox.io/s/cliente-ritmosustanciometro-n61hr)
 * 🔗 [Endpoint obtener ritmo y sustancia](https://xb8ek.sse.codesandbox.io/)
-* 🎬 [Slides](https://docs.google.com/presentation/d/1yjr1FHrym7gfBtVy7TFQb8wvH2Akqu_1xZYxi2H_CCM/edit?usp=sharing)
+* 🎬 [Slides](https://docs.google.com/presentation/d/1LtpsEyeeFJA-MUaAnACV1H_W9Dr0K6EXSgXF0i9xQyo/edit#slide=id.g37ccca1cd0_0_16)
 
 ## 📚 Introducción
 * [React](./docs/tools/react.md)
