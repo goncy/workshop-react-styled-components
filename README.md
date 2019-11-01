@@ -1,7 +1,7 @@
 # Metiendo ritmo y sustancia en dos japish👋 con `React` y `Styled Components`
-`React` es una librería para crear interfaces de usuario, la vamos a usar para manejar las vistas y lógica de nuestra aplicación.
-
-Usar solamente el `CSS` que soportan los navegadores hace que nuestros estilos sean verbosos, limitados o complicados de mantener en una aplicación grande. Vamos a usar `Styled Components` para mejorar esa experiencia.
+* `React` es una librería para crear interfaces de usuario, la vamos a usar para manejar las vistas y lógica de nuestra aplicación.
+* Usar solamente el `CSS` que soportan los navegadores hace que nuestros estilos sean verbosos, limitados o complicados de mantener en una aplicación grande.
+Vamos a usar `Styled Components` para mejorar esa experiencia.
 
 ## ❓ Qué vamos a hacer?
 El `ritmosustanciometro`, una aplicación que obtiene el porcentaje de ritmo y sustancia de un individuo en tiempo real.
