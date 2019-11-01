@@ -13,7 +13,6 @@ El `ritmosustanciometro`, una aplicación que obtiene el porcentaje de ritmo y s
 
 ## 🍪 Recomendable
 * Conocimiento básico de `React`
-* Manejo básico de la `terminal`
 * Conocimiento básico de ES6 (arrow functions, destructuring, template literals, etc)
 
 ## 🛠 Materiales
