@@ -75,7 +75,7 @@ function ContadorDeSustancias({sustancia = 'sustancia desconocida'}) { /* Hacemo
 
   return (
     <div>
-      <h1>Kilos de sustancia: {kilos}</h1>
+      <h1>Kilos de {sustancia}: {kilos}</h1>
       <button onClick={() => setKilos(kilos - 1)}> - </button>
       <button onClick={() => setKilos(kilos + 1)}> + </button>
     </div>
